@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+:root {
+  /* Core Light Palette */
+  --bg-main: #F8FAFD;
+  --bg-secondary: #F1F5FA;
+  --bg-alternate: #EDF2F8;
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #F7F9FC;
+  
+  /* Text */
+  --text-dark: #172033;
+  --text-secondary: #64748B;
+  --text-muted: #94A3B8;
+
+  /* Accents */
+  --accent-electric: #4776E6;
+  --accent-cyan: #55C8D9;
+  --accent-violet: #9075E8;
+  --accent-pale-blue: #E7F0FF;
+  --accent-lavender: #F0ECFF;
+  --accent-ice-blue: #EAF8FC;
+  --accent-soft-indigo: #DDE6FC;
+
+  /* Glass Tokens - Light */
+  --glass-bg-subtle: rgba(255, 255, 255, 0.52);
+  --glass-bg-card: rgba(255, 255, 255, 0.68);
+  --glass-bg-liquid: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-border-subtle: rgba(226, 232, 240, 0.7);
+  --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  
+  /* Shadows */
+  --shadow-soft: 0 4px 20px -2px rgba(45, 65, 100, 0.05);
+  --shadow-medium: 0 12px 32px -4px rgba(45, 65, 100, 0.08);
+  --shadow-floating: 0 24px 48px -8px rgba(45, 65, 100, 0.12);
+  --shadow-glow: 0 0 25px rgba(71, 118, 230, 0.22);
+}
+
+.dark {
+  --bg-main: #0B0F19;
+  --bg-secondary: #0F172A;
+  --bg-alternate: #131D31;
+  --surface-primary: #151F32;
+  --surface-secondary: #1B273E;
+  
+  --text-dark: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+
+  --accent-electric: #5E8BFF;
+  --accent-cyan: #46D2E6;
+  --accent-violet: #A288FC;
+  --accent-pale-blue: #162447;
+  --accent-lavender: #1E1B4B;
+  --accent-ice-blue: #0E2A38;
+  --accent-soft-indigo: #1A2744;
+
+  --glass-bg-subtle: rgba(18, 25, 41, 0.55);
+  --glass-bg-card: rgba(21, 31, 50, 0.68);
+  --glass-bg-liquid: rgba(26, 38, 62, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-subtle: rgba(255, 255, 255, 0.08);
+  --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  --shadow-medium: 0 12px 32px -4px rgba(0, 0, 0, 0.55);
+  --shadow-floating: 0 24px 50px -8px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 30px rgba(94, 139, 255, 0.25);
+}
+
+/* Base Body Setup */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Geist", "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 9999px;
+  border: 2px solid var(--bg-main);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 118, 230, 0.45);
+}
+
+/* =========================================================================
+   GLASSMORPHISM DESIGN SYSTEM (LEVEL 1, 2, 3)
+   ========================================================================= */
+
+/* Level 1: Subtle Glass (Pills, badges, small nav items) */
+.glass-subtle {
+  background: var(--glass-bg-subtle);
+  backdrop-filter: blur(14px) saturate(145%);
+  -webkit-backdrop-filter: blur(14px) saturate(145%);
+  border: 1px solid var(--glass-border-subtle);
+  box-shadow: 0 2px 10px rgba(40, 60, 100, 0.03), var(--glass-inner-bevel);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-subtle:hover {
+  border-color: rgba(71, 118, 230, 0.35);
+  box-shadow: 0 4px 16px rgba(40, 60, 100, 0.06), var(--glass-inner-bevel);
+}
+
+/* Level 2: Premium Glass (Standard cards, timeline blocks, modals) */
+.glass-card {
+  background: var(--glass-bg-card);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 10px 30px -5px rgba(40, 60, 100, 0.05),
+    0 2px 8px -2px rgba(40, 60, 100, 0.03),
+    var(--glass-inner-bevel);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+}
+.glass-card:hover {
+  box-shadow:
+    0 20px 40px -10px rgba(45, 65, 100, 0.09),
+    0 4px 12px -2px rgba(45, 65, 100, 0.04),
+    var(--glass-inner-bevel);
+  border-color: rgba(71, 118, 230, 0.4);
+}
+
+/* Level 3: Liquid Glass (Featured cards, Hero visuals, primary widgets) */
+.liquid-glass {
+  position: relative;
+  background: var(--glass-bg-liquid);
+  backdrop-filter: blur(28px) saturate(175%);
+  -webkit-backdrop-filter: blur(28px) saturate(175%);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 20px 48px -10px rgba(45, 65, 100, 0.09),
+    0 4px 14px -3px rgba(45, 65, 100, 0.04),
+    var(--glass-inner-bevel);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Liquid Glass Specular Shimmer */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.35) 45%,
+    rgba(85, 200, 217, 0.15) 50%,
+    rgba(255, 255, 255, 0.4) 55%,
+    transparent 65%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: transform 0.8s ease;
+  z-index: 1;
+}
+
+.liquid-glass:hover::before {
+  transform: translateX(50%);
+}
+
+/* Floating Glass Navbar Capsule */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 12px 36px -4px rgba(40, 60, 100, 0.06),
+    0 2px 6px rgba(40, 60, 100, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+}
+
+.dark .glass-navbar {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 12px 36px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(110deg, #4776E6 0%, #55C8D9 50%, #9075E8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(110deg, #60A5FA 0%, #38BDF8 50%, #C084FC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle Technical Grid Pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+/* Animated Ambient Glows */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(25px, -20px) scale(1.06);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(0.95);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 18s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 22s ease-in-out infinite;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
