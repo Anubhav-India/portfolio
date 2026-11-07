@@ -78,16 +78,16 @@ export const CinematicIntro: React.FC = () => {
       return;
     }
 
-    // Storyboard Timeline:
-    // Scene 1: 0s – 1.0s (Opening circle, initials, name)
-    // Scene 2: 1.0s – 2.5s (Identity Reveal kinetic typography)
-    // Scene 3: 2.5s – 3.8s (Abstract motion shapes composition)
-    // Scene 4: 3.8s – 5.8s (Interactive Entry Screen with ENTER PORTFOLIO)
-    // Auto-transition after 5.8s if no user action
-    const t1 = setTimeout(() => setPhase("scene2"), 1050);
-    const t2 = setTimeout(() => setPhase("scene3"), 2500);
-    const t3 = setTimeout(() => setPhase("scene4"), 3800);
-    const t4 = setTimeout(() => triggerExit(), 5900);
+    // Pacing Storyboard Timeline:
+    // Scene 1: Opening (3.0s) -> 0ms to 3000ms
+    // Scene 2: Identity Reveal (4.0s) -> 3000ms to 7000ms
+    // Scene 3: Abstract Motion (3.0s) -> 7000ms to 10000ms
+    // Scene 4: Interactive Entry Screen (4.0s) -> 10000ms to 14000ms
+    // Auto-transition after 14s if visitor does not click
+    const t1 = setTimeout(() => setPhase("scene2"), 3000);
+    const t2 = setTimeout(() => setPhase("scene3"), 7000);
+    const t3 = setTimeout(() => setPhase("scene4"), 10000);
+    const t4 = setTimeout(() => triggerExit(), 14000);
 
     timersRef.current.push(t1, t2, t3, t4);
 
