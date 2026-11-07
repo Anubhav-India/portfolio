@@ -16,7 +16,11 @@ interface Ray {
   width: number;
 }
 
-export const StripeBeamCanvas: React.FC = () => {
+export interface StripeBeamCanvasProps {
+  onSwitchToGame?: () => void;
+}
+
+export const StripeBeamCanvas: React.FC<StripeBeamCanvasProps> = ({ onSwitchToGame }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5, isHovered: false });

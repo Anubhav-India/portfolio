@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { StripeBeamCanvas } from "@/components/ui/StripeBeamCanvas";
+import { InteractivePlayground } from "@/components/ui/InteractivePlayground";
 import { Compass, Lightbulb, Target, Sparkles, CheckCircle2, MapPin } from "lucide-react";
 
 export const AboutSection: React.FC = () => {
@@ -61,8 +61,8 @@ export const AboutSection: React.FC = () => {
               )}
             </GlassCard>
 
-            {/* Cursor-Sensitive Optical Beam Dynamics (Stripe-inspired) */}
-            <StripeBeamCanvas />
+            {/* Interactive Engineering Playground: Chrome T-Rex Runner & Optical Beam */}
+            <InteractivePlayground />
           </div>
 
           {/* Right Column: Focus Areas & Aspirations */}
