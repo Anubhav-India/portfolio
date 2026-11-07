@@ -9,48 +9,48 @@ export const AnimatedBackground: React.FC = () => {
       aria-hidden="true"
     >
       {/* Base Tinted Ambient Gradient Background */}
-      <div className="absolute inset-0 bg-[#F8FAFD] dark:bg-[#0B0F19] transition-colors duration-500" />
+      <div className="absolute inset-0 bg-[#FFFDF5] transition-colors duration-500" />
 
       {/* Subtle Engineering Grid Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-60 dark:opacity-30" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
 
-      {/* Ambient Radial Gradient 1: Top-Left Pale Blue / Electric Blue */}
+      {/* Ambient Radial Gradient 1: Top-Left Mint Green */}
       <div
         className="absolute -top-[15%] -left-[10%] w-[65vw] h-[65vw] max-w-[900px] max-h-[900px] rounded-full animate-float-slow"
         style={{
           background:
-            "radial-gradient(circle, rgba(71, 118, 230, 0.12) 0%, rgba(85, 200, 217, 0.06) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(200, 232, 208, 0.35) 0%, rgba(227, 240, 168, 0.15) 45%, transparent 70%)",
           filter: "blur(70px)",
         }}
       />
 
-      {/* Ambient Radial Gradient 2: Right Hero / Lavender / Violet */}
+      {/* Ambient Radial Gradient 2: Right Hero Peach */}
       <div
         className="absolute top-[10%] -right-[15%] w-[60vw] h-[60vw] max-w-[850px] max-h-[850px] rounded-full animate-float-reverse"
         style={{
           background:
-            "radial-gradient(circle, rgba(144, 117, 232, 0.11) 0%, rgba(240, 236, 255, 0.25) 40%, transparent 70%)",
+            "radial-gradient(circle, rgba(255, 214, 191, 0.3) 0%, rgba(255, 244, 223, 0.5) 40%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
 
-      {/* Ambient Radial Gradient 3: Center Mid-Page Ice Cyan */}
+      {/* Ambient Radial Gradient 3: Center Butter Yellow */}
       <div
         className="absolute top-[45%] left-[20%] w-[55vw] h-[55vw] max-w-[750px] max-h-[750px] rounded-full animate-float-slow"
         style={{
           background:
-            "radial-gradient(circle, rgba(85, 200, 217, 0.08) 0%, rgba(231, 240, 255, 0.3) 50%, transparent 70%)",
+            "radial-gradient(circle, rgba(248, 231, 161, 0.25) 0%, rgba(255, 253, 245, 0.5) 50%, transparent 70%)",
           filter: "blur(90px)",
           animationDelay: "-7s",
         }}
       />
 
-      {/* Ambient Radial Gradient 4: Bottom Contact Glow */}
+      {/* Ambient Radial Gradient 4: Bottom Soft Orange */}
       <div
         className="absolute bottom-[-10%] right-[10%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] rounded-full animate-float-reverse"
         style={{
           background:
-            "radial-gradient(circle, rgba(71, 118, 230, 0.09) 0%, rgba(144, 117, 232, 0.08) 50%, transparent 75%)",
+            "radial-gradient(circle, rgba(246, 183, 122, 0.25) 0%, rgba(242, 139, 130, 0.15) 50%, transparent 75%)",
           filter: "blur(75px)",
           animationDelay: "-12s",
         }}

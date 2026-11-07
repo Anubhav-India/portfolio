@@ -2,102 +2,117 @@
 
 :root {
   /* =========================================================================
-     LIGHT THEME DESIGN TOKENS
-     Carefully calibrated for high contrast, crisp definition, and zero wash-out.
+     APPROVED WARM, VIBRANT & REFRESHING PALETTE
+     - Warm White: #FFFDF5
+     - Cream: #FFF4DF
+     - Mint Green: #C8E8D0
+     - Soft Sage: #A9C7A5
+     - Pale Lime: #E3F0A8
+     - Butter Yellow: #F8E7A1
+     - Soft Orange: #F6B77A
+     - Peach: #FFD6BF
+     - Coral Red: #F28B82
+     - Soft Rose: #F3C1C1
+     Typography:
+     - Primary text: #343A32
+     - Secondary text: #77776D
      ========================================================================= */
-  --bg-main: #F5F7FC;
-  --bg-secondary: #EDF1F8;
-  --bg-alternate: #E5EAF3;
-  --surface-primary: #FFFFFF;
-  --surface-secondary: #F8FAFD;
+  --bg-main: #FFFDF5;         /* Warm White */
+  --bg-secondary: #FFF4DF;    /* Cream */
+  --bg-alternate: #FBF6EA;    /* Soft Butter Wash */
+  --surface-primary: #FFFFFF; /* Pure Warm White */
+  --surface-secondary: #FFFDF5;
   
-  /* Text */
-  --text-dark: #172033;
-  --text-secondary: #526078;
-  --text-muted: #748197;
+  /* Typography */
+  --text-dark: #343A32;       /* Primary text */
+  --text-secondary: #77776D;  /* Secondary text */
+  --text-muted: #9BA094;      /* Soft Warm Muted */
 
-  /* Accents */
-  --accent-primary: #315FEA;
-  --accent-electric: #315FEA;
-  --accent-secondary: #087F9C;
-  --accent-violet: #8661D9;
-  --accent-pale: #EBF1FD;
-  --accent-lavender: #F2EEFB;
-  --accent-cyan-soft: #E8F7FB;
+  /* Palette Named Tokens */
+  --color-warm-white: #FFFDF5;
+  --color-cream: #FFF4DF;
+  --color-mint: #C8E8D0;
+  --color-sage: #A9C7A5;
+  --color-lime: #E3F0A8;
+  --color-yellow: #F8E7A1;
+  --color-orange: #F6B77A;
+  --color-peach: #FFD6BF;
+  --color-coral: #F28B82;
+  --color-rose: #F3C1C1;
 
-  /* Glass Tokens - Light (Crisp opacity to prevent washed out text) */
-  --glass-bg-subtle: rgba(255, 255, 255, 0.82);
-  --glass-bg-card: rgba(255, 255, 255, 0.90);
-  --glass-bg-liquid: rgba(255, 255, 255, 0.95);
-  --glass-border: rgba(24, 38, 65, 0.12);
-  --glass-border-subtle: rgba(24, 38, 65, 0.08);
+  /* Primary Accents */
+  --accent-primary: #F28B82;    /* Coral Red */
+  --accent-electric: #F28B82;
+  --accent-secondary: #A9C7A5;  /* Soft Sage */
+  --accent-orange: #F6B77A;     /* Soft Orange */
+  --accent-mint: #C8E8D0;       /* Mint Green */
+  --accent-yellow: #F8E7A1;     /* Butter Yellow */
+  --accent-peach: #FFD6BF;      /* Peach */
+
+  /* Glass Tokens - Warm Translucent */
+  --glass-bg-subtle: rgba(255, 253, 245, 0.88);
+  --glass-bg-card: rgba(255, 255, 255, 0.92);
+  --glass-bg-liquid: rgba(255, 253, 245, 0.96);
+  --glass-border: rgba(169, 199, 165, 0.32);
+  --glass-border-subtle: rgba(246, 183, 122, 0.24);
   --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.95);
   
-  /* Shadows - Light (Natural & crisp depth) */
-  --shadow-soft: 0 2px 10px -1px rgba(24, 38, 65, 0.05), 0 1px 3px rgba(24, 38, 65, 0.03);
-  --shadow-medium: 0 8px 24px -4px rgba(24, 38, 65, 0.07), 0 2px 6px -1px rgba(24, 38, 65, 0.03);
-  --shadow-floating: 0 20px 42px -8px rgba(24, 38, 65, 0.10), 0 4px 12px -2px rgba(24, 38, 65, 0.04);
-  --shadow-glow: 0 0 24px rgba(49, 95, 234, 0.20);
+  /* Shadows - Warm Soft Natural */
+  --shadow-soft: 0 4px 16px -2px rgba(119, 119, 109, 0.06), 0 1px 3px rgba(119, 119, 109, 0.04);
+  --shadow-medium: 0 8px 28px -4px rgba(119, 119, 109, 0.08), 0 2px 8px -1px rgba(119, 119, 109, 0.04);
+  --shadow-floating: 0 20px 42px -8px rgba(119, 119, 109, 0.12), 0 4px 12px -2px rgba(119, 119, 109, 0.05);
+  --shadow-glow: 0 0 24px rgba(246, 183, 122, 0.28);
 
   /* Cursor Tokens */
-  --cursor-ring: rgba(49, 95, 234, 0.65);
-  --cursor-dot: #315FEA;
-  --cursor-fill: rgba(49, 95, 234, 0.08);
+  --cursor-ring: rgba(242, 139, 130, 0.8);
+  --cursor-dot: #F28B82;
+  --cursor-fill: rgba(255, 214, 191, 0.28);
 
   /* Gradient Accent System */
-  --gradient-text-start: #386BEB;
-  --gradient-text-mid: #087F9C;
-  --gradient-text-end: #8661D9;
+  --gradient-text-start: #E67E50;
+  --gradient-text-mid: #F28B82;
+  --gradient-text-end: #6B9A64;
 }
 
 .dark {
-  /* =========================================================================
-     DARK THEME DESIGN TOKENS
-     Deep, sophisticated, with controlled luminous blue and violet accents.
-     ========================================================================= */
-  --bg-main: #080B14;
-  --bg-secondary: #101625;
-  --bg-alternate: #151D30;
-  --surface-primary: #151E30;
-  --surface-secondary: #1B263D;
+  /* Warm evening ambiance (preserving light & warm aesthetic principles) */
+  --bg-main: #242922;
+  --bg-secondary: #2C332A;
+  --bg-alternate: #343C32;
+  --surface-primary: #2F362D;
+  --surface-secondary: #262C24;
   
-  /* Text */
-  --text-dark: #F4F7FF;
-  --text-secondary: #A5B1C5;
-  --text-muted: #78869D;
+  --text-dark: #FFFDF5;
+  --text-secondary: #D4DBD0;
+  --text-muted: #A3ACA0;
 
-  /* Accents */
-  --accent-primary: #5797FF;
-  --accent-electric: #5797FF;
-  --accent-secondary: #53D6E8;
-  --accent-violet: #9B75EF;
-  --accent-pale: #142242;
-  --accent-lavender: #211B45;
-  --accent-cyan-soft: #0E2938;
+  --accent-primary: #F6B77A;
+  --accent-electric: #F6B77A;
+  --accent-secondary: #C8E8D0;
+  --accent-orange: #FFD6BF;
+  --accent-mint: #E3F0A8;
+  --accent-yellow: #F8E7A1;
+  --accent-peach: #FFD6BF;
 
-  /* Glass Tokens - Dark */
-  --glass-bg-subtle: rgba(18, 26, 43, 0.62);
-  --glass-bg-card: rgba(21, 30, 48, 0.74);
-  --glass-bg-liquid: rgba(26, 38, 62, 0.84);
-  --glass-border: rgba(255, 255, 255, 0.10);
-  --glass-border-subtle: rgba(255, 255, 255, 0.07);
-  --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  --glass-bg-subtle: rgba(44, 51, 42, 0.75);
+  --glass-bg-card: rgba(47, 54, 45, 0.85);
+  --glass-bg-liquid: rgba(52, 60, 50, 0.92);
+  --glass-border: rgba(169, 199, 165, 0.22);
+  --glass-border-subtle: rgba(246, 183, 122, 0.18);
+  --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.12);
 
-  /* Shadows - Dark */
-  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
-  --shadow-medium: 0 12px 32px -4px rgba(0, 0, 0, 0.62);
-  --shadow-floating: 0 24px 50px -8px rgba(0, 0, 0, 0.78);
-  --shadow-glow: 0 0 30px rgba(87, 151, 255, 0.28);
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+  --shadow-medium: 0 12px 32px -4px rgba(0, 0, 0, 0.45);
+  --shadow-floating: 0 24px 50px -8px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 0 30px rgba(246, 183, 122, 0.22);
 
-  /* Cursor Tokens */
-  --cursor-ring: rgba(87, 151, 255, 0.75);
-  --cursor-dot: #5797FF;
-  --cursor-fill: rgba(87, 151, 255, 0.15);
+  --cursor-ring: rgba(246, 183, 122, 0.85);
+  --cursor-dot: #F6B77A;
+  --cursor-fill: rgba(246, 183, 122, 0.22);
 
-  /* Gradient Accent System */
-  --gradient-text-start: #528BFF;
-  --gradient-text-mid: #53D6E8;
-  --gradient-text-end: #9B75EF;
+  --gradient-text-start: #F6B77A;
+  --gradient-text-mid: #FFD6BF;
+  --gradient-text-end: #C8E8D0;
 }
 
 /* Base Body Setup */
@@ -121,7 +136,7 @@ body {
   background: var(--bg-main);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.28);
+  background: rgba(169, 199, 165, 0.4);
   border-radius: 9999px;
   border: 2px solid var(--bg-main);
 }
@@ -136,8 +151,8 @@ body {
 /* Level 1: Subtle Glass (Pills, badges, small nav items) */
 .glass-subtle {
   background: var(--glass-bg-subtle);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(145%);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
   border: 1px solid var(--glass-border-subtle);
   box-shadow: var(--shadow-soft), var(--glass-inner-bevel);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -150,8 +165,8 @@ body {
 /* Level 2: Premium Glass (Standard cards, timeline blocks, modals) */
 .glass-card {
   background: var(--glass-bg-card);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(155%);
+  -webkit-backdrop-filter: blur(24px) saturate(155%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-medium), var(--glass-inner-bevel);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
@@ -167,8 +182,8 @@ body {
 .liquid-glass {
   position: relative;
   background: var(--glass-bg-liquid);
-  backdrop-filter: blur(28px) saturate(175%);
-  -webkit-backdrop-filter: blur(28px) saturate(175%);
+  backdrop-filter: blur(28px) saturate(165%);
+  -webkit-backdrop-filter: blur(28px) saturate(165%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-floating), var(--glass-inner-bevel);
   overflow: hidden;
@@ -187,9 +202,9 @@ body {
     115deg,
     transparent 0%,
     transparent 35%,
-    rgba(255, 255, 255, 0.4) 45%,
-    rgba(83, 214, 232, 0.15) 50%,
-    rgba(255, 255, 255, 0.45) 55%,
+    rgba(255, 255, 255, 0.5) 45%,
+    rgba(248, 231, 161, 0.25) 50%,
+    rgba(255, 255, 255, 0.55) 55%,
     transparent 65%,
     transparent 100%
   );
@@ -204,10 +219,10 @@ body {
 
 /* Floating Glass Navbar Capsule */
 .glass-navbar {
-  background: var(--glass-bg-card);
+  background: rgba(255, 253, 245, 0.88);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(169, 199, 165, 0.3);
   box-shadow: var(--shadow-medium), var(--glass-inner-bevel);
   transition: all 0.3s ease;
 }
@@ -225,14 +240,14 @@ body {
 .bg-grid-pattern {
   background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(24, 38, 65, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(24, 38, 65, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(169, 199, 165, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(169, 199, 165, 0.09) 1px, transparent 1px);
 }
 
 .dark .bg-grid-pattern {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(200, 232, 208, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(200, 232, 208, 0.05) 1px, transparent 1px);
 }
 
 /* Animated Ambient Glows */
@@ -241,7 +256,7 @@ body {
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(20px, -18px) scale(1.05);
+    transform: translate(18px, -15px) scale(1.04);
   }
 }
 
@@ -250,7 +265,7 @@ body {
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(-25px, 15px) scale(0.96);
+    transform: translate(-20px, 12px) scale(0.97);
   }
 }
 

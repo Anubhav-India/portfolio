@@ -35,34 +35,34 @@ export const HeroGlassVisual: React.FC = () => {
       className="relative w-full max-w-lg aspect-square flex items-center justify-center select-none perspective-1000"
       style={{ perspective: "1000px" }}
     >
-      {/* Background Soft Glow */}
-      <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-[#4776E6]/25 via-[#55C8D9]/20 to-[#9075E8]/20 blur-3xl -z-10 animate-pulse-glow" />
+      {/* Background Soft Warm Glow */}
+      <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-[#F8E7A1]/45 via-[#FFD6BF]/40 to-[#C8E8D0]/35 blur-3xl -z-10 animate-pulse-glow" />
 
-      {/* Outer Orbital Ring */}
-      <div className="absolute inset-0 rounded-full border border-dashed border-[#4776E6]/20 animate-spin" style={{ animationDuration: "50s" }} />
-      <div className="absolute inset-8 rounded-full border border-dotted border-[#9075E8]/20 animate-spin" style={{ animationDuration: "35s", animationDirection: "reverse" }} />
+      {/* Outer Orbital Rings in Soft Sage & Soft Orange */}
+      <div className="absolute inset-0 rounded-full border border-dashed border-[#A9C7A5]/35 animate-spin" style={{ animationDuration: "50s" }} />
+      <div className="absolute inset-8 rounded-full border border-dotted border-[#F6B77A]/35 animate-spin" style={{ animationDuration: "35s", animationDirection: "reverse" }} />
 
       {/* Main Interactive 3D Liquid Glass Card */}
       <div
-        className="relative w-[85%] h-[85%] rounded-[2.5rem] liquid-glass p-6 sm:p-8 flex flex-col justify-between transition-transform duration-200 ease-out shadow-2xl"
+        className="relative w-[85%] h-[85%] rounded-[2.5rem] liquid-glass p-6 sm:p-8 flex flex-col justify-between transition-transform duration-200 ease-out shadow-2xl bg-white/95 border-[#A9C7A5]/35"
         style={{
           transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
           transformStyle: "preserve-3d",
         }}
       >
-        {/* Specular Light Refraction Gradient Corner */}
-        <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-gradient-to-br from-white/40 via-[#55C8D9]/25 to-transparent blur-2xl pointer-events-none" />
+        {/* Specular Warm Light Refraction Gradient Corner */}
+        <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-gradient-to-br from-white/60 via-[#FFD6BF]/35 to-transparent blur-2xl pointer-events-none" />
 
         {/* Top Header of the Visual Card */}
         <div className="flex items-center justify-between z-10">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)] animate-ping" />
+            <div className="w-3 h-3 rounded-full bg-[#A9C7A5] shadow-[0_0_8px_rgba(169,199,165,0.9)] animate-ping" />
             <span className="text-xs font-mono font-medium tracking-wider text-[var(--text-secondary)]">
               SYSTEM ONLINE
             </span>
           </div>
-          <div className="px-3 py-1 rounded-full glass-subtle text-[11px] font-mono text-[#4776E6] flex items-center gap-1.5 font-medium">
-            <Cpu className="w-3.5 h-3.5 text-[#4776E6]" />
+          <div className="px-3 py-1 rounded-full glass-subtle text-[11px] font-mono text-[#343A32] flex items-center gap-1.5 font-bold border-[#F6B77A]/30 bg-[#FFFDF5]">
+            <Cpu className="w-3.5 h-3.5 text-[#F28B82]" />
             <span>CORE ARCH</span>
           </div>
         </div>
@@ -70,7 +70,7 @@ export const HeroGlassVisual: React.FC = () => {
         {/* Central Visual: Profile Photo OR Abstract Engineering Core */}
         <div className="relative my-auto flex flex-col items-center justify-center z-10 py-4">
           {hasCustomImage && portfolioData.personal.profileImage ? (
-            <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden glass-card p-2 shadow-xl">
+            <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl overflow-hidden glass-card p-2 shadow-xl border-[#A9C7A5]/40 bg-[#FFFDF5]">
               <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <Image
                   src={portfolioData.personal.profileImage}
@@ -85,12 +85,12 @@ export const HeroGlassVisual: React.FC = () => {
           ) : (
             <div className="relative w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center">
               {/* Abstract Glass Geometric Core */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#4776E6]/15 via-white/50 to-[#9075E8]/20 backdrop-blur-xl border border-white/80 dark:border-white/20 shadow-inner flex items-center justify-center">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#FFF4DF] via-white/80 to-[#FFD6BF]/40 backdrop-blur-xl border border-[#A9C7A5]/35 shadow-inner flex items-center justify-center">
                 {/* Circuit Nodes & Waveform Animation */}
                 <div className="relative w-24 h-24 flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full border-2 border-[#4776E6]/30 animate-ping" style={{ animationDuration: "3s" }} />
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#4776E6] to-[#9075E8] flex items-center justify-center text-white shadow-lg shadow-[#4776E6]/30">
-                    <Activity className="w-8 h-8 animate-pulse text-white" />
+                  <div className="absolute inset-0 rounded-full border-2 border-[#A9C7A5]/40 animate-ping" style={{ animationDuration: "3s" }} />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#F6B77A] to-[#F28B82] flex items-center justify-center text-[#343A32] shadow-lg shadow-[#F6B77A]/30">
+                    <Activity className="w-8 h-8 animate-pulse text-[#343A32]" />
                   </div>
                 </div>
               </div>
@@ -101,14 +101,14 @@ export const HeroGlassVisual: React.FC = () => {
           <div className="w-full mt-4 px-2">
             <div className="flex items-center justify-between text-[10px] font-mono text-[var(--text-muted)] mb-1.5">
               <span>TELEMETRY STREAM</span>
-              <span className="text-emerald-500">1000 Hz / SYNCHRONIZED</span>
+              <span className="text-[#343A32] font-semibold">1000 Hz / CALIBRATED</span>
             </div>
             <div className="h-8 w-full flex items-center gap-1">
               {[40, 65, 30, 85, 95, 45, 60, 20, 75, 90, 50, 70, 35, 80, 60, 90, 45, 75, 30].map(
                 (height, i) => (
                   <div
                     key={i}
-                    className="flex-1 rounded-full bg-gradient-to-t from-[#4776E6] to-[#55C8D9] transition-all duration-500 opacity-75"
+                    className="flex-1 rounded-full bg-gradient-to-t from-[#A9C7A5] via-[#F8E7A1] to-[#F6B77A] transition-all duration-500 opacity-85"
                     style={{
                       height: `${height}%`,
                       animation: `pulseGlow 2s ease-in-out infinite`,
@@ -122,18 +122,18 @@ export const HeroGlassVisual: React.FC = () => {
         </div>
 
         {/* Card Footer Telemetry Indicators */}
-        <div className="grid grid-cols-2 gap-2 z-10 pt-2 border-t border-black/5 dark:border-white/10">
-          <div className="glass-subtle px-3 py-2 rounded-xl">
+        <div className="grid grid-cols-2 gap-2 z-10 pt-2 border-t border-[#A9C7A5]/25">
+          <div className="glass-subtle px-3 py-2 rounded-xl bg-[#FFFDF5] border-[#FFD6BF]/30">
             <div className="text-[10px] text-[var(--text-muted)] uppercase font-mono">Precision</div>
-            <div className="text-xs font-semibold text-[var(--text-dark)] flex items-center gap-1 mt-0.5">
-              <Zap className="w-3 h-3 text-amber-500" />
+            <div className="text-xs font-bold text-[var(--text-dark)] flex items-center gap-1 mt-0.5">
+              <Zap className="w-3 h-3 text-[#F6B77A]" />
               <span>Low-Latency</span>
             </div>
           </div>
-          <div className="glass-subtle px-3 py-2 rounded-xl">
+          <div className="glass-subtle px-3 py-2 rounded-xl bg-[#FFFDF5] border-[#C8E8D0]/30">
             <div className="text-[10px] text-[var(--text-muted)] uppercase font-mono">Architecture</div>
-            <div className="text-xs font-semibold text-[var(--text-dark)] flex items-center gap-1 mt-0.5">
-              <Layers className="w-3 h-3 text-[#4776E6]" />
+            <div className="text-xs font-bold text-[var(--text-dark)] flex items-center gap-1 mt-0.5">
+              <Layers className="w-3 h-3 text-[#A9C7A5]" />
               <span>Full-Stack</span>
             </div>
           </div>
@@ -142,19 +142,19 @@ export const HeroGlassVisual: React.FC = () => {
 
       {/* Floating Spatial Badge 1: Top-Right */}
       <div
-        className="absolute -top-3 -right-2 sm:-right-4 px-4 py-2 rounded-2xl glass-card text-xs font-medium text-[var(--text-dark)] flex items-center gap-2 shadow-lg animate-float-slow"
+        className="absolute -top-3 -right-2 sm:-right-4 px-4 py-2 rounded-2xl glass-card text-xs font-bold text-[var(--text-dark)] flex items-center gap-2 shadow-lg animate-float-slow bg-[#FFF4DF] border-[#FFD6BF]"
         style={{ zIndex: 20 }}
       >
-        <Sparkles className="w-4 h-4 text-[#9075E8]" />
+        <Sparkles className="w-4 h-4 text-[#F28B82]" />
         <span>Spatial UI & Systems</span>
       </div>
 
       {/* Floating Spatial Badge 2: Bottom-Left */}
       <div
-        className="absolute -bottom-2 -left-2 sm:-left-4 px-4 py-2 rounded-2xl glass-card text-xs font-medium text-[var(--text-dark)] flex items-center gap-2 shadow-lg animate-float-reverse"
+        className="absolute -bottom-2 -left-2 sm:-left-4 px-4 py-2 rounded-2xl glass-card text-xs font-bold text-[var(--text-dark)] flex items-center gap-2 shadow-lg animate-float-reverse bg-[#FFFDF5] border-[#C8E8D0]"
         style={{ zIndex: 20 }}
       >
-        <div className="w-2 h-2 rounded-full bg-cyan-400" />
+        <div className="w-2.5 h-2.5 rounded-full bg-[#A9C7A5]" />
         <span>Hardware & Software</span>
       </div>
     </div>

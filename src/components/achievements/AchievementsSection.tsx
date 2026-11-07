@@ -17,11 +17,11 @@ export const AchievementsSection: React.FC = () => {
   if (!achievements || achievements.length === 0) return null;
 
   return (
-    <section id="achievements" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section id="achievements" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[#FFFDF5]">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#4776E6]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#F28B82]">
             <Trophy className="w-3.5 h-3.5" />
             <span>HONORS & VALIDATION</span>
           </div>
@@ -39,24 +39,25 @@ export const AchievementsSection: React.FC = () => {
             <GlassCard
               key={item.id}
               variant="card"
-              className="p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1 transition-transform group"
+              glowColor="rgba(246, 183, 122, 0.2)"
+              className="p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1 transition-transform group bg-[#FFFDF5]/90 border border-[#FFD6BF]/60 shadow-xs"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 uppercase tracking-wider">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-[#F8E7A1]/50 text-[#343A32] border border-[#F8E7A1] uppercase tracking-wider">
                     {item.category}
                   </span>
                   <div className="flex items-center gap-1.5 text-xs text-[var(--text-muted)] font-mono">
-                    <Calendar className="w-3.5 h-3.5 text-[#4776E6]" />
+                    <Calendar className="w-3.5 h-3.5 text-[#F6B77A]" />
                     <span>{item.date}</span>
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-[var(--text-dark)] group-hover:text-[#4776E6] transition-colors">
+                <h3 className="text-lg font-bold text-[var(--text-dark)] group-hover:text-[#F28B82] transition-colors">
                   {item.title}
                 </h3>
 
-                <div className="text-xs font-mono font-semibold text-[#4776E6]">
+                <div className="text-xs font-mono font-semibold text-[#F28B82]">
                   {item.issuer}
                 </div>
 
@@ -67,12 +68,12 @@ export const AchievementsSection: React.FC = () => {
 
               {/* Verification Link */}
               {item.verificationLink && (
-                <div className="pt-4 mt-4 border-t border-black/5 dark:border-white/5">
+                <div className="pt-4 mt-4 border-t border-[#FFD6BF]/30">
                   <a
                     href={item.verificationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4776E6] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#F28B82] hover:underline"
                   >
                     <span>Verify Credential</span>
                     <ExternalLink className="w-3 h-3" />

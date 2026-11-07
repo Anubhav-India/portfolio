@@ -31,7 +31,7 @@ export const ScrollProgress: React.FC = () => {
       aria-label="Page reading progress"
     >
       <div
-        className="h-full bg-gradient-to-r from-[#4776E6] via-[#55C8D9] to-[#9075E8] transition-all duration-150 ease-out shadow-[0_0_8px_rgba(71,118,230,0.6)]"
+        className="h-full bg-gradient-to-r from-[#F6B77A] via-[#F28B82] to-[#A9C7A5] transition-all duration-150 ease-out shadow-[0_0_8px_rgba(242,139,130,0.6)]"
         style={{ width: `${progress}%` }}
       />
     </div>

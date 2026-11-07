@@ -19,11 +19,11 @@ export const ResearchSection: React.FC = () => {
   if (!research || research.length === 0) return null;
 
   return (
-    <section id="research" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section id="research" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[#FFFDF5]">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#4776E6]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#F28B82]">
             <Microscope className="w-3.5 h-3.5" />
             <span>EXPLORATION & INQUIRY</span>
           </div>
@@ -41,11 +41,12 @@ export const ResearchSection: React.FC = () => {
             <GlassCard
               key={item.id}
               variant="card"
-              className="p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1.5 transition-transform group"
+              glowColor="rgba(242, 139, 130, 0.2)"
+              className="p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1.5 transition-transform group bg-[#FFFDF5]/90 border border-[#FFD6BF]/60 shadow-xs"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="p-2 rounded-xl bg-[#4776E6]/10 text-[#4776E6] group-hover:bg-[#4776E6] group-hover:text-white transition-colors duration-300">
+                  <div className="p-2 rounded-xl bg-[#F28B82]/15 text-[#F28B82] group-hover:bg-[#F28B82] group-hover:text-[#FFFDF5] transition-colors duration-300">
                     <Activity className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-mono tracking-widest uppercase text-[var(--text-muted)]">
@@ -53,7 +54,7 @@ export const ResearchSection: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-[var(--text-dark)] group-hover:text-[#4776E6] transition-colors">
+                <h3 className="text-lg font-bold text-[var(--text-dark)] group-hover:text-[#F28B82] transition-colors">
                   {item.domain}
                 </h3>
 
@@ -70,7 +71,7 @@ export const ResearchSection: React.FC = () => {
                     {item.technicalConcepts.map((concept, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-1 rounded-lg text-xs font-mono glass-subtle text-[var(--text-dark)]"
+                        className="px-2.5 py-1 rounded-lg text-xs font-mono bg-[#FFFDF5] text-[var(--text-dark)] border border-[#FFD6BF]/40"
                       >
                         {concept}
                       </span>
@@ -80,17 +81,17 @@ export const ResearchSection: React.FC = () => {
               </div>
 
               {/* Associated Publications / Projects */}
-              <div className="mt-6 pt-4 border-t border-black/5 dark:border-white/10 space-y-3">
+              <div className="mt-6 pt-4 border-t border-[#FFD6BF]/30 space-y-3">
                 {item.publications && item.publications.length > 0 && (
                   <div className="space-y-2">
-                    <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-[#4776E6] font-semibold">
+                    <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-[#F28B82] font-semibold">
                       <BookOpen className="w-3 h-3" />
                       <span>Publications & Working Papers</span>
                     </div>
                     {item.publications.map((pub, idx) => (
                       <div
                         key={idx}
-                        className="glass-subtle p-2.5 rounded-xl text-xs space-y-1"
+                        className="bg-[#FFF4DF]/50 p-2.5 rounded-xl text-xs space-y-1 border border-[#FFD6BF]/30"
                       >
                         <div className="font-medium text-[var(--text-dark)] leading-snug">
                           {pub.title}
@@ -104,7 +105,7 @@ export const ResearchSection: React.FC = () => {
                             href={pub.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-[11px] text-[#4776E6] hover:underline pt-0.5"
+                            className="inline-flex items-center gap-1 text-[11px] text-[#F28B82] hover:underline pt-0.5"
                           >
                             <span>Read Paper</span>
                             <ExternalLink className="w-3 h-3" />

@@ -51,25 +51,25 @@ export const SkillsSection: React.FC = () => {
   const getLevelBadgeClass = (level?: string) => {
     switch (level) {
       case "Advanced":
-        return "bg-blue-500/10 text-[#4776E6] border-blue-500/20";
+        return "bg-[#C8E8D0]/70 text-[#343A32] border-[#A9C7A5]";
       case "Intermediate":
-        return "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20";
+        return "bg-[#F6B77A]/30 text-[#343A32] border-[#F6B77A]/60";
       case "Working knowledge":
-        return "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20";
+        return "bg-[#F8E7A1]/60 text-[#343A32] border-[#F8E7A1]";
       case "Familiar":
-        return "bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20";
+        return "bg-[#F3C1C1]/60 text-[#343A32] border-[#F3C1C1]";
       default:
-        return "bg-slate-500/10 text-slate-600 border-slate-500/20";
+        return "bg-[#FFFDF5] text-[#343A32] border-[#FFD6BF]";
     }
   };
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-[#FFFDF5] via-[#FFF4DF]/60 to-[#FFFDF5]">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#4776E6]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#F28B82]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>TECHNICAL CAPABILITIES</span>
             </div>
@@ -89,7 +89,7 @@ export const SkillsSection: React.FC = () => {
               placeholder="Search technologies..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs rounded-full glass-subtle text-[var(--text-dark)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[#4776E6]"
+              className="w-full pl-9 pr-4 py-2 text-xs rounded-full bg-[#FFFDF5] border border-[#FFD6BF] text-[var(--text-dark)] placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[#F28B82]"
             />
           </div>
         </div>
@@ -106,8 +106,8 @@ export const SkillsSection: React.FC = () => {
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-200 cursor-pointer select-none",
                   isActive
-                    ? "glass-card text-[#4776E6] shadow-sm border-[#4776E6]/40 font-semibold"
-                    : "glass-subtle text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
+                    ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold border border-[#343A32]"
+                    : "bg-[#FFFDF5] text-[var(--text-secondary)] hover:text-[var(--text-dark)] border border-[#FFD6BF]/40"
                 )}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -123,10 +123,11 @@ export const SkillsSection: React.FC = () => {
             <GlassCard
               key={`${skill.name}-${index}`}
               variant="card"
-              className="p-5 flex flex-col justify-between hover:-translate-y-1 group"
+              glowColor="rgba(246, 183, 122, 0.2)"
+              className="p-5 flex flex-col justify-between hover:-translate-y-1 group bg-[#FFFDF5]/90 border border-[#FFD6BF]/50 hover:border-[#F6B77A] shadow-xs"
             >
               <div className="flex items-start justify-between gap-3">
-                <span className="font-semibold text-sm text-[var(--text-dark)] group-hover:text-[#4776E6] transition-colors">
+                <span className="font-semibold text-sm text-[var(--text-dark)] group-hover:text-[#F28B82] transition-colors">
                   {skill.name}
                 </span>
                 {skill.level && (
@@ -141,9 +142,9 @@ export const SkillsSection: React.FC = () => {
                 )}
               </div>
 
-              <div className="mt-4 pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-[11px] text-[var(--text-muted)] font-mono capitalize">
+              <div className="mt-4 pt-3 border-t border-[#FFD6BF]/30 flex items-center justify-between text-[11px] text-[var(--text-muted)] font-mono capitalize">
                 <span>{skill.category}</span>
-                <span className="opacity-0 group-hover:opacity-100 text-[#4776E6] transition-opacity duration-200">
+                <span className="opacity-0 group-hover:opacity-100 text-[#A9C7A5] font-semibold transition-opacity duration-200">
                   Verified
                 </span>
               </div>

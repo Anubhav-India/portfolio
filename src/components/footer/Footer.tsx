@@ -14,12 +14,12 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-black/5 dark:border-white/10 mt-12 bg-white/20 dark:bg-black/10 backdrop-blur-lg">
+    <footer className="relative pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-t border-[#FFD6BF]/40 mt-12 bg-[#FFFDF5]/70 backdrop-blur-lg">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         {/* Brand & Identity */}
         <div className="space-y-1.5">
           <div className="flex items-center justify-center md:justify-start gap-2">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#4776E6] to-[#9075E8] flex items-center justify-center text-white text-[10px] font-bold">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#F6B77A] to-[#F28B82] flex items-center justify-center text-[#343A32] text-[10px] font-bold shadow-sm">
               {personal.name && personal.name !== "[YOUR FULL NAME]"
                 ? personal.name.slice(0, 1).toUpperCase()
                 : "P"}
@@ -37,12 +37,12 @@ export const Footer: React.FC = () => {
 
         {/* Quick Nav Links */}
         <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-[var(--text-secondary)]">
-          <a href="#about" className="hover:text-[#4776E6] transition-colors">About</a>
-          <a href="#skills" className="hover:text-[#4776E6] transition-colors">Skills</a>
-          <a href="#projects" className="hover:text-[#4776E6] transition-colors">Projects</a>
-          <a href="#education" className="hover:text-[#4776E6] transition-colors">Education</a>
-          <a href="#experience" className="hover:text-[#4776E6] transition-colors">Experience</a>
-          <a href="#contact" className="hover:text-[#4776E6] transition-colors">Contact</a>
+          <a href="#about" className="hover:text-[#F28B82] transition-colors">About</a>
+          <a href="#skills" className="hover:text-[#F28B82] transition-colors">Skills</a>
+          <a href="#projects" className="hover:text-[#F28B82] transition-colors">Projects</a>
+          <a href="#education" className="hover:text-[#F28B82] transition-colors">Education</a>
+          <a href="#experience" className="hover:text-[#F28B82] transition-colors">Experience</a>
+          <a href="#contact" className="hover:text-[#F28B82] transition-colors">Contact</a>
         </div>
 
         {/* Social Icons & Back to top */}
@@ -52,7 +52,7 @@ export const Footer: React.FC = () => {
               href={social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[#4776E6] hover:scale-110 transition-all"
+              className="p-2 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[#F28B82] hover:scale-110 transition-all"
               aria-label="LinkedIn"
             >
               <LinkedinIcon className="w-3.5 h-3.5" />
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               href={social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[#4776E6] hover:scale-110 transition-all"
+              className="p-2 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[#F28B82] hover:scale-110 transition-all"
               aria-label="GitHub"
             >
               <GithubIcon className="w-3.5 h-3.5" />
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
           {personal.email && (
             <a
               href={`mailto:${personal.email}`}
-              className="p-2 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[#4776E6] hover:scale-110 transition-all"
+              className="p-2 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[#F28B82] hover:scale-110 transition-all"
               aria-label="Email"
             >
               <Mail className="w-3.5 h-3.5" />
@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
           )}
           <button
             onClick={scrollToTop}
-            className="p-2 rounded-full glass-card text-[var(--text-secondary)] hover:text-[#4776E6] hover:scale-110 transition-all cursor-pointer"
+            className="p-2 rounded-full glass-card text-[var(--text-secondary)] hover:text-[#F28B82] hover:scale-110 transition-all cursor-pointer"
             aria-label="Scroll back to top"
             title="Back to top"
           >

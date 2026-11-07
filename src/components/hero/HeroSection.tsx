@@ -41,7 +41,7 @@ export const HeroSection: React.FC = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-[#FFF4DF]/70 via-[#FFFDF5] to-[#FFFDF5]"
     >
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Headline, Bio, CTAs, Social */}
@@ -51,37 +51,37 @@ export const HeroSection: React.FC = () => {
             transform: `translate3d(${parallax.x * 0.5}px, ${parallax.y * 0.5}px, 0)`,
           }}
         >
-          {/* Availability Pill */}
+          {/* Availability Pill in Soft Sage & Mint Green */}
           <div
             data-cursor="STATUS"
-            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-subtle text-xs font-medium text-[var(--text-dark)] shadow-sm cursor-default"
+            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#C8E8D0]/50 border border-[#A9C7A5]/50 text-xs font-semibold text-[#343A32] shadow-sm cursor-default"
           >
             <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A9C7A5] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#6B9A64]" />
             </span>
             <span>{personal.availabilityText}</span>
           </div>
 
           {/* Main Headline & Identity */}
           <div className="space-y-2">
-            <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-semibold text-[var(--text-muted)] block">
+            <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] font-bold text-[#77776D] block">
               Hello, I&apos;m
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[var(--text-dark)] leading-[1.08]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#343A32] leading-[1.08]">
               <span className="gradient-text">
                 {personal.name && personal.name !== "[YOUR FULL NAME]"
                   ? personal.name
                   : "Anubhav Anand"}
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl font-semibold text-[var(--text-secondary)] tracking-tight pt-1">
+            <p className="text-xl sm:text-2xl font-bold text-[#77776D] tracking-tight pt-1">
               {personal.headline}
             </p>
           </div>
 
           {/* Supporting Editorial Description */}
-          <p className="text-base sm:text-lg text-[var(--text-secondary)] max-w-xl leading-relaxed">
+          <p className="text-base sm:text-lg text-[#77776D] max-w-xl leading-relaxed">
             {personal.introduction}
           </p>
 
@@ -89,9 +89,9 @@ export const HeroSection: React.FC = () => {
           {personal.location && (
             <div
               data-cursor="LOCATION"
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[var(--text-secondary)] shadow-sm"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF4DF] border border-[#F6B77A]/40 text-xs font-mono font-semibold text-[#343A32] shadow-sm"
             >
-              <MapPin className="w-3.5 h-3.5 text-[var(--accent-primary)]" />
+              <MapPin className="w-3.5 h-3.5 text-[#F28B82]" />
               <span>{personal.location}</span>
             </div>
           )}
@@ -143,7 +143,7 @@ export const HeroSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="LINKEDIN"
-                className="p-2.5 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[var(--accent-primary)] hover:scale-110 active:scale-95 transition-all duration-200"
+                className="p-2.5 rounded-full bg-[#FFFDF5] border border-[#A9C7A5]/40 text-[#343A32] hover:text-[#F28B82] hover:border-[#F28B82] hover:scale-110 active:scale-95 transition-all duration-200 shadow-sm"
                 aria-label="LinkedIn profile"
               >
                 <LinkedinIcon className="w-4 h-4" />
@@ -155,7 +155,7 @@ export const HeroSection: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="GITHUB"
-                className="p-2.5 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[var(--accent-primary)] hover:scale-110 active:scale-95 transition-all duration-200"
+                className="p-2.5 rounded-full bg-[#FFFDF5] border border-[#A9C7A5]/40 text-[#343A32] hover:text-[#F28B82] hover:border-[#F28B82] hover:scale-110 active:scale-95 transition-all duration-200 shadow-sm"
                 aria-label="GitHub profile"
               >
                 <GithubIcon className="w-4 h-4" />
@@ -165,14 +165,14 @@ export const HeroSection: React.FC = () => {
               <a
                 href={`mailto:${personal.email}`}
                 data-cursor="EMAIL"
-                className="p-2.5 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[var(--accent-primary)] hover:scale-110 active:scale-95 transition-all duration-200"
+                className="p-2.5 rounded-full bg-[#FFFDF5] border border-[#A9C7A5]/40 text-[#343A32] hover:text-[#F28B82] hover:border-[#F28B82] hover:scale-110 active:scale-95 transition-all duration-200 shadow-sm"
                 aria-label="Send direct email"
               >
                 <Mail className="w-4 h-4" />
               </a>
             )}
-            <div className="h-4 w-px bg-black/10 dark:bg-white/10 mx-1" />
-            <span className="text-xs text-[var(--text-muted)] font-mono">
+            <div className="h-4 w-px bg-[#A9C7A5]/30 mx-1" />
+            <span className="text-xs text-[#77776D] font-mono font-medium">
               SCROLL TO EXPLORE
             </span>
           </div>

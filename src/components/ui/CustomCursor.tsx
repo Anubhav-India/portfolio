@@ -185,7 +185,7 @@ export const CustomCursor: React.FC = () => {
         {/* Contextual Micro-Label (e.g. "VIEW", "EXPLORE") */}
         <span
           ref={labelRef}
-          className="text-[8px] font-mono font-bold tracking-widest text-[var(--accent-primary)] uppercase opacity-0 transition-opacity duration-150 pointer-events-none"
+          className="text-[8px] font-mono font-bold tracking-widest text-[var(--text-dark)] uppercase opacity-0 transition-opacity duration-150 pointer-events-none"
         />
       </div>
     </div>

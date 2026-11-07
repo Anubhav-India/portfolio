@@ -51,21 +51,21 @@ export const InteractiveBackground: React.FC = () => {
       const isDark = document.documentElement.classList.contains("dark");
       if (isDark) {
         return {
-          spotlightCore: "rgba(87, 151, 255, 0.14)",
-          spotlightMid: "rgba(83, 214, 232, 0.08)",
-          spotlightOuter: "rgba(155, 117, 239, 0.03)",
-          particleColors: ["#5797FF", "#53D6E8", "#9B75EF", "#A5B1C5"],
-          lineColor: "rgba(87, 151, 255,",
-          gridColor: "rgba(255, 255, 255, 0.035)",
+          spotlightCore: "rgba(246, 183, 122, 0.15)",
+          spotlightMid: "rgba(200, 232, 208, 0.08)",
+          spotlightOuter: "rgba(248, 231, 161, 0.03)",
+          particleColors: ["#F6B77A", "#C8E8D0", "#F8E7A1", "#FFD6BF", "#A9C7A5"],
+          lineColor: "rgba(169, 199, 165,",
+          gridColor: "rgba(200, 232, 208, 0.05)",
         };
       }
       return {
-        spotlightCore: "rgba(49, 95, 234, 0.07)",
-        spotlightMid: "rgba(8, 127, 156, 0.04)",
-        spotlightOuter: "rgba(134, 97, 217, 0.015)",
-        particleColors: ["#315FEA", "#087F9C", "#8661D9", "#526078"],
-        lineColor: "rgba(49, 95, 234,",
-        gridColor: "rgba(24, 38, 65, 0.05)",
+        spotlightCore: "rgba(248, 231, 161, 0.22)",
+        spotlightMid: "rgba(255, 214, 191, 0.14)",
+        spotlightOuter: "rgba(200, 232, 208, 0.05)",
+        particleColors: ["#A9C7A5", "#F6B77A", "#F28B82", "#C8E8D0", "#F8E7A1", "#FFD6BF"],
+        lineColor: "rgba(169, 199, 165,",
+        gridColor: "rgba(169, 199, 165, 0.08)",
       };
     };
 
@@ -246,28 +246,39 @@ export const InteractiveBackground: React.FC = () => {
       aria-hidden="true"
     >
       {/* Base Tinted Ambient Background */}
-      <div className="absolute inset-0 bg-[#F5F7FC] dark:bg-[#080B14] transition-colors duration-500" />
+      <div className="absolute inset-0 bg-[#FFFDF5] dark:bg-[#242922] transition-colors duration-500" />
 
-      {/* Subtle Engineering Grid */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-70 dark:opacity-40" />
+      {/* Subtle Engineering Grid in Warm Sage */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-60 dark:opacity-30" />
 
-      {/* Ambient Radial Gradient 1: Top-Left Pale Accent Glow */}
+      {/* Ambient Radial Gradient 1: Top-Left Mint & Pale Lime */}
       <div
         className="absolute -top-[15%] -left-[10%] w-[65vw] h-[65vw] max-w-[850px] max-h-[850px] rounded-full animate-float-slow"
         style={{
           background:
-            "radial-gradient(circle, rgba(49, 95, 234, 0.08) 0%, rgba(8, 127, 156, 0.04) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(200, 232, 208, 0.35) 0%, rgba(227, 240, 168, 0.20) 45%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
 
-      {/* Ambient Radial Gradient 2: Right Hero / Lavender Glow */}
+      {/* Ambient Radial Gradient 2: Right Hero / Warm Peach & Butter Yellow */}
       <div
-        className="absolute top-[12%] -right-[15%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] rounded-full animate-float-reverse"
+        className="absolute top-[10%] -right-[15%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] rounded-full animate-float-reverse"
         style={{
           background:
-            "radial-gradient(circle, rgba(134, 97, 217, 0.08) 0%, rgba(49, 95, 234, 0.05) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(255, 214, 191, 0.35) 0%, rgba(248, 231, 161, 0.22) 45%, transparent 70%)",
           filter: "blur(85px)",
+        }}
+      />
+
+      {/* Ambient Radial Gradient 3: Center Mid-Page Soft Cream Wash */}
+      <div
+        className="absolute top-[50%] left-[15%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] rounded-full animate-float-slow"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255, 244, 223, 0.45) 0%, rgba(246, 183, 122, 0.15) 50%, transparent 70%)",
+          filter: "blur(90px)",
+          animationDelay: "-6s",
         }}
       />
 

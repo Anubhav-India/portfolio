@@ -17,11 +17,11 @@ export const LeadershipSection: React.FC = () => {
   if (!leadership || leadership.length === 0) return null;
 
   return (
-    <section id="leadership" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section id="leadership" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[#FFFDF5]">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#4776E6]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#F28B82]">
             <Users className="w-3.5 h-3.5" />
             <span>COMMUNITY & MENTORSHIP</span>
           </div>
@@ -39,20 +39,21 @@ export const LeadershipSection: React.FC = () => {
             <GlassCard
               key={item.id}
               variant="card"
-              className="p-6 sm:p-8 space-y-5 hover:-translate-y-1 transition-transform"
+              glowColor="rgba(246, 183, 122, 0.2)"
+              className="p-6 sm:p-8 space-y-5 hover:-translate-y-1 transition-transform bg-[#FFFDF5]/90 border border-[#FFD6BF]/60 shadow-xs"
             >
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                 <div className="space-y-1">
                   <h3 className="text-xl font-bold text-[var(--text-dark)]">
                     {item.position}
                   </h3>
-                  <div className="text-sm font-semibold text-[#4776E6]">
+                  <div className="text-sm font-semibold text-[#F28B82]">
                     {item.organization}
                   </div>
                 </div>
 
                 <div className="flex items-center gap-1.5 text-xs text-[var(--text-muted)] font-mono shrink-0">
-                  <Calendar className="w-3.5 h-3.5 text-[#4776E6]" />
+                  <Calendar className="w-3.5 h-3.5 text-[#F6B77A]" />
                   <span>{item.duration}</span>
                 </div>
               </div>
@@ -66,7 +67,7 @@ export const LeadershipSection: React.FC = () => {
                   <ul className="space-y-2 text-xs sm:text-sm text-[var(--text-secondary)]">
                     {item.responsibilities.map((resp, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-[#A9C7A5] shrink-0 mt-0.5" />
                         <span>{resp}</span>
                       </li>
                     ))}
@@ -76,13 +77,13 @@ export const LeadershipSection: React.FC = () => {
 
               {/* Key Achievements */}
               {item.achievements && item.achievements.length > 0 && (
-                <div className="pt-3 border-t border-black/5 dark:border-white/5 space-y-1.5">
+                <div className="pt-3 border-t border-[#FFD6BF]/30 space-y-1.5">
                   {item.achievements.map((ach, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 text-xs font-semibold text-amber-600 dark:text-amber-400"
+                      className="flex items-center gap-2 text-xs font-semibold text-[#343A32] bg-[#F8E7A1]/40 border border-[#F8E7A1] p-2 rounded-xl"
                     >
-                      <Award className="w-4 h-4 shrink-0" />
+                      <Award className="w-4 h-4 shrink-0 text-[#F6B77A]" />
                       <span>{ach}</span>
                     </div>
                   ))}

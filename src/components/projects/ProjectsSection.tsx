@@ -26,6 +26,49 @@ const CATEGORIES: ProjectCategory[] = [
   "AI/ML",
 ];
 
+const CARD_THEMES = [
+  {
+    bg: "bg-[#FFF5EE]",
+    border: "border-[#FFD6BF]",
+    badgeBg: "bg-[#FFD6BF]/50",
+    badgeText: "text-[#343A32]",
+    tagBg: "bg-[#FFFDF5]",
+    glow: "rgba(255, 214, 191, 0.4)",
+  }, // Peach
+  {
+    bg: "bg-[#F2FAF4]",
+    border: "border-[#C8E8D0]",
+    badgeBg: "bg-[#C8E8D0]/50",
+    badgeText: "text-[#343A32]",
+    tagBg: "bg-[#FFFDF5]",
+    glow: "rgba(200, 232, 208, 0.4)",
+  }, // Mint
+  {
+    bg: "bg-[#FEFCEE]",
+    border: "border-[#F8E7A1]",
+    badgeBg: "bg-[#F8E7A1]/50",
+    badgeText: "text-[#343A32]",
+    tagBg: "bg-[#FFFDF5]",
+    glow: "rgba(248, 231, 161, 0.4)",
+  }, // Butter Yellow
+  {
+    bg: "bg-[#F4F8F3]",
+    border: "border-[#A9C7A5]",
+    badgeBg: "bg-[#A9C7A5]/50",
+    badgeText: "text-[#343A32]",
+    tagBg: "bg-[#FFFDF5]",
+    glow: "rgba(169, 199, 165, 0.4)",
+  }, // Soft Sage
+  {
+    bg: "bg-[#FDF4F4]",
+    border: "border-[#F3C1C1]",
+    badgeBg: "bg-[#F3C1C1]/50",
+    badgeText: "text-[#343A32]",
+    tagBg: "bg-[#FFFDF5]",
+    glow: "rgba(243, 193, 193, 0.4)",
+  }, // Soft Rose
+];
+
 export const ProjectsSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All");
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -47,12 +90,12 @@ export const ProjectsSection: React.FC = () => {
   }, [filteredProjects, featuredProject]);
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[#FFFDF5]">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#4776E6]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#F28B82]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>PORTFOLIO SHOWCASE</span>
             </div>
@@ -73,8 +116,8 @@ export const ProjectsSection: React.FC = () => {
                 className={cn(
                   "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer whitespace-nowrap",
                   activeCategory === cat
-                    ? "glass-card text-[#4776E6] shadow-sm border-[#4776E6]/40 font-semibold"
-                    : "glass-subtle text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
+                    ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold border border-[#343A32]"
+                    : "bg-[#FFFDF5] text-[var(--text-secondary)] hover:text-[var(--text-dark)] border border-[#FFD6BF]/40"
                 )}
               >
                 {cat}
@@ -87,17 +130,18 @@ export const ProjectsSection: React.FC = () => {
         {featuredProject && (
           <GlassCard
             variant="liquid"
-            className="p-8 sm:p-10 lg:p-12 relative overflow-hidden group border-white/90 dark:border-white/20"
+            glowColor="rgba(246, 183, 122, 0.25)"
+            className="p-8 sm:p-10 lg:p-12 relative overflow-hidden group bg-gradient-to-br from-[#FFFDF5] via-[#FFF9F3] to-[#FFF4DF] border border-[#FFD6BF]/80 shadow-md"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Column: Details */}
               <div className="lg:col-span-7 space-y-5">
                 <div className="flex items-center gap-2.5">
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#4776E6]/10 text-[#4776E6] border border-[#4776E6]/20">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#F28B82]/15 text-[#F28B82] border border-[#F28B82]/30">
                     {featuredProject.category}
                   </span>
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center gap-1">
-                    <Sparkles className="w-3 h-3" />
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#F8E7A1]/50 text-[#343A32] border border-[#F8E7A1] flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-[#F6B77A]" />
                     <span>Featured Showcase</span>
                   </span>
                 </div>
@@ -115,7 +159,7 @@ export const ProjectsSection: React.FC = () => {
                   {featuredProject.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 rounded-full text-xs font-mono font-medium glass-subtle text-[var(--text-dark)]"
+                      className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#FFFDF5] text-[var(--text-dark)] border border-[#FFD6BF]/50"
                     >
                       {tech}
                     </span>
@@ -163,13 +207,13 @@ export const ProjectsSection: React.FC = () => {
 
               {/* Right Column: Architectural Visual Highlight */}
               <div className="lg:col-span-5 flex items-center justify-center">
-                <div className="w-full glass-subtle p-6 rounded-3xl border border-white/70 dark:border-white/10 space-y-4">
-                  <div className="flex items-center justify-between text-xs font-mono text-[var(--text-muted)] border-b border-black/5 dark:border-white/5 pb-2">
+                <div className="w-full bg-[#FFFDF5]/90 p-6 rounded-3xl border border-[#FFD6BF]/60 space-y-4 shadow-sm">
+                  <div className="flex items-center justify-between text-xs font-mono text-[var(--text-muted)] border-b border-[#FFD6BF]/30 pb-2">
                     <span className="flex items-center gap-1.5">
-                      <Cpu className="w-3.5 h-3.5 text-[#4776E6]" />
+                      <Cpu className="w-3.5 h-3.5 text-[#F6B77A]" />
                       <span>SYSTEM PROFILE</span>
                     </span>
-                    <span className="text-emerald-500">OPTIMIZED</span>
+                    <span className="text-[#A9C7A5] font-semibold">OPTIMIZED</span>
                   </div>
 
                   <div className="space-y-3">
@@ -182,7 +226,7 @@ export const ProjectsSection: React.FC = () => {
 
                     <div className="text-xs">
                       <div className="text-[10px] font-mono uppercase text-[var(--text-muted)]">Latency Target</div>
-                      <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold mt-0.5">
+                      <div className="text-xs font-mono text-[#A9C7A5] font-bold mt-0.5">
                         &lt; 15ms Real-Time Deterministic Response
                       </div>
                     </div>
@@ -197,7 +241,7 @@ export const ProjectsSection: React.FC = () => {
 
                   <button
                     onClick={() => setSelectedProject(featuredProject)}
-                    className="w-full py-2.5 rounded-xl bg-[#4776E6]/10 text-[#4776E6] hover:bg-[#4776E6]/20 text-xs font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full py-2.5 rounded-xl bg-[#F6B77A]/20 text-[#343A32] hover:bg-[#F6B77A]/30 text-xs font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <span>Inspect Schematics & Logs</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -208,59 +252,81 @@ export const ProjectsSection: React.FC = () => {
           </GlassCard>
         )}
 
-        {/* Supporting Projects Grid */}
+        {/* Supporting Projects Grid with Alternating Warm Pastel Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {supportingProjects.map((project) => (
-            <GlassCard
-              key={project.id}
-              variant="card"
-              data-cursor="VIEW"
-              className="p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1.5 group cursor-pointer"
-              onClick={() => setSelectedProject(project)}
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-[var(--accent-primary)]/10 text-[var(--accent-primary)]">
-                    {project.category}
-                  </span>
-                  <div className="flex items-center gap-1 text-[var(--text-muted)] group-hover:text-[var(--accent-primary)] transition-colors">
-                    <Maximize2 className="w-4 h-4" />
+          {supportingProjects.map((project, idx) => {
+            const theme = CARD_THEMES[idx % CARD_THEMES.length];
+            return (
+              <GlassCard
+                key={project.id}
+                variant="card"
+                glowColor={theme.glow}
+                data-cursor="VIEW"
+                className={cn(
+                  "p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1.5 group cursor-pointer border transition-all duration-300 shadow-sm",
+                  theme.bg,
+                  theme.border
+                )}
+                onClick={() => setSelectedProject(project)}
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span
+                      className={cn(
+                        "px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium",
+                        theme.badgeBg,
+                        theme.badgeText
+                      )}
+                    >
+                      {project.category}
+                    </span>
+                    <div className="flex items-center gap-1 text-[var(--text-muted)] group-hover:text-[#F28B82] transition-colors">
+                      <Maximize2 className="w-4 h-4" />
+                    </div>
+                  </div>
+
+                  <h4 className="text-lg font-bold text-[var(--text-dark)] group-hover:text-[#F28B82] transition-colors">
+                    {project.title}
+                  </h4>
+
+                  <p className="text-xs sm:text-sm text-[var(--text-secondary)] line-clamp-3 leading-relaxed">
+                    {project.shortDescription}
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-black/5 space-y-3">
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.techStack.slice(0, 3).map((tech) => (
+                      <span
+                        key={tech}
+                        className={cn(
+                          "px-2 py-0.5 rounded-md text-[10px] font-mono text-[var(--text-dark)] border border-black/5",
+                          theme.tagBg
+                        )}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.techStack.length > 3 && (
+                      <span
+                        className={cn(
+                          "px-2 py-0.5 rounded-md text-[10px] font-mono text-[var(--text-muted)] border border-black/5",
+                          theme.tagBg
+                        )}
+                      >
+                        +{project.techStack.length - 3}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs text-[#F28B82] font-semibold pt-1">
+                    <span>Explore Architecture</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                   </div>
                 </div>
-
-                <h4 className="text-lg font-bold text-[var(--text-dark)] group-hover:text-[var(--accent-primary)] transition-colors">
-                  {project.title}
-                </h4>
-
-                <p className="text-xs sm:text-sm text-[var(--text-secondary)] line-clamp-3 leading-relaxed">
-                  {project.shortDescription}
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-black/5 dark:border-white/10 space-y-3">
-                <div className="flex flex-wrap gap-1.5">
-                  {project.techStack.slice(0, 3).map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 rounded-md text-[10px] font-mono glass-subtle text-[var(--text-muted)]"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.techStack.length > 3 && (
-                    <span className="px-2 py-0.5 rounded-md text-[10px] font-mono glass-subtle text-[var(--text-muted)]">
-                      +{project.techStack.length - 3}
-                    </span>
-                  )}
-                </div>
-
-                <div className="flex items-center justify-between text-xs text-[var(--accent-primary)] font-medium pt-1">
-                  <span>Explore Architecture</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
-                </div>
-              </div>
-            </GlassCard>
-          ))}
+              </GlassCard>
+            );
+          })}
         </div>
 
         {filteredProjects.length === 0 && (

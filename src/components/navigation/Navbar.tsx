@@ -92,7 +92,7 @@ export const Navbar: React.FC = () => {
             }}
             className="flex items-center gap-2.5 group cursor-pointer"
           >
-            <div className="relative w-8 h-8 rounded-full overflow-hidden bg-gradient-to-tr from-[#4776E6] via-[#55C8D9] to-[#9075E8] flex items-center justify-center text-white font-bold text-xs shadow-[0_2px_10px_rgba(71,118,230,0.3)] transition-transform duration-300 group-hover:scale-110">
+            <div className="relative w-8 h-8 rounded-full overflow-hidden bg-gradient-to-tr from-[#F6B77A] via-[#F28B82] to-[#A9C7A5] flex items-center justify-center text-[#343A32] font-bold text-xs shadow-[0_2px_10px_rgba(242,139,130,0.3)] transition-transform duration-300 group-hover:scale-110">
               {portfolioData.personal.profileImage ? (
                 <Image
                   src={portfolioData.personal.profileImage}
@@ -107,7 +107,7 @@ export const Navbar: React.FC = () => {
                 "P"
               )}
             </div>
-            <span className="font-semibold text-sm tracking-tight hidden sm:inline text-[var(--text-dark)] group-hover:text-[#4776E6] transition-colors">
+            <span className="font-semibold text-sm tracking-tight hidden sm:inline text-[var(--text-dark)] group-hover:text-[#F28B82] transition-colors">
               {portfolioData.personal.name && portfolioData.personal.name !== "[YOUR FULL NAME]"
                 ? portfolioData.personal.name
                 : "Portfolio"}
@@ -179,7 +179,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-full glass-subtle text-[var(--text-dark)] hover:text-[#4776E6] transition-colors cursor-pointer"
+              className="lg:hidden p-2 rounded-full glass-subtle text-[var(--text-dark)] hover:text-[#F28B82] transition-colors cursor-pointer"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
@@ -192,7 +192,7 @@ export const Navbar: React.FC = () => {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-30 lg:hidden flex flex-col justify-start pt-24 px-6 pb-8 bg-[var(--bg-main)]/90 backdrop-blur-2xl animate-in fade-in duration-200"
+          className="fixed inset-0 z-30 lg:hidden flex flex-col justify-start pt-24 px-6 pb-8 bg-[var(--bg-main)]/95 backdrop-blur-2xl animate-in fade-in duration-200"
           role="dialog"
           aria-modal="true"
         >
@@ -210,12 +210,12 @@ export const Navbar: React.FC = () => {
                   className={cn(
                     "px-4 py-3 rounded-2xl text-base font-medium transition-colors flex items-center justify-between",
                     isActive
-                      ? "glass-card text-[#4776E6] font-semibold"
+                      ? "glass-card text-[#F28B82] font-semibold"
                       : "text-[var(--text-secondary)] hover:text-[var(--text-dark)] hover:bg-black/5 dark:hover:bg-white/5"
                   )}
                 >
                   <span>{item.label}</span>
-                  {isActive && <div className="w-2 h-2 rounded-full bg-[#4776E6]" />}
+                  {isActive && <div className="w-2 h-2 rounded-full bg-[#F28B82]" />}
                 </a>
               );
             })}
@@ -240,7 +240,7 @@ export const Navbar: React.FC = () => {
                 }}
                 className="w-full py-2.5 px-4 rounded-full glass-subtle text-sm text-[var(--text-secondary)] flex items-center justify-center gap-2"
               >
-                <Command className="w-4 h-4 text-[#4776E6]" />
+                <Command className="w-4 h-4 text-[#F28B82]" />
                 <span>Command Menu (Ctrl+K)</span>
               </button>
             </div>

@@ -175,10 +175,10 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
                 <button
                   key={item.id}
                   onClick={item.action}
-                  className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-sm text-[var(--text-dark)] hover:bg-[#4776E6]/10 hover:text-[#4776E6] transition-colors duration-150 group cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-sm text-[var(--text-dark)] hover:bg-[#F28B82]/15 hover:text-[#F28B82] transition-colors duration-150 group cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-1.5 rounded-lg bg-black/5 dark:bg-white/5 text-[var(--text-secondary)] group-hover:text-[#4776E6]">
+                    <div className="p-1.5 rounded-lg bg-black/5 dark:bg-white/5 text-[var(--text-secondary)] group-hover:text-[#F28B82]">
                       <Icon className="w-4 h-4" />
                     </div>
                     <span className="font-medium">{item.name}</span>

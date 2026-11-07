@@ -61,17 +61,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       />
 
       {/* Modal Window */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] glass-card rounded-3xl overflow-hidden shadow-2xl flex flex-col border border-white/80 dark:border-white/15 animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-4xl max-h-[90vh] bg-[#FFFDF5] rounded-3xl overflow-hidden shadow-2xl flex flex-col border border-[#FFD6BF] animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="p-6 sm:p-8 border-b border-black/5 dark:border-white/10 flex items-start justify-between gap-4 bg-white/40 dark:bg-black/20">
+        <div className="p-6 sm:p-8 border-b border-[#FFD6BF]/40 flex items-start justify-between gap-4 bg-[#FFF4DF]/50">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#4776E6]/10 text-[#4776E6] border border-[#4776E6]/20">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#F28B82]/15 text-[#F28B82] border border-[#F28B82]/30">
                 {project.category}
               </span>
               {project.featured && (
-                <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" />
+                <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#F8E7A1]/50 text-[#343A32] border border-[#F8E7A1] flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-[#F6B77A]" />
                   <span>Featured Project</span>
                 </span>
               )}
@@ -86,7 +86,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           <button
             onClick={onClose}
-            className="p-2 rounded-full glass-subtle text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 cursor-pointer"
+            className="p-2 rounded-full glass-subtle text-[var(--text-secondary)] hover:text-[#343A32] cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -94,13 +94,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Navigation Tabs */}
-        <div className="flex items-center gap-2 px-6 sm:px-8 py-3 border-b border-black/5 dark:border-white/10 overflow-x-auto bg-black/[0.01] dark:bg-white/[0.01]">
+        <div className="flex items-center gap-2 px-6 sm:px-8 py-3 border-b border-[#FFD6BF]/40 overflow-x-auto bg-[#FFFDF5]">
           <button
             onClick={() => setActiveTab("overview")}
             className={cn(
               "px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer",
               activeTab === "overview"
-                ? "bg-[#4776E6] text-white shadow-sm"
+                ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold"
                 : "text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
             )}
           >
@@ -113,7 +113,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               className={cn(
                 "px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer",
                 activeTab === "architecture"
-                  ? "bg-[#4776E6] text-white shadow-sm"
+                  ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold"
                   : "text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
               )}
             >
@@ -127,7 +127,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               className={cn(
                 "px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer",
                 activeTab === "hardware"
-                  ? "bg-[#4776E6] text-white shadow-sm"
+                  ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold"
                   : "text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
               )}
             >
@@ -140,7 +140,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             className={cn(
               "px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer",
               activeTab === "outcomes"
-                ? "bg-[#4776E6] text-white shadow-sm"
+                ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold"
                 : "text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
             )}
           >
@@ -196,7 +196,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                         key={i}
                         className="flex items-start gap-2.5 text-xs text-[var(--text-dark)] glass-subtle p-3 rounded-xl"
                       >
-                        <CheckCircle className="w-4 h-4 text-[#4776E6] shrink-0 mt-0.5" />
+                        <CheckCircle className="w-4 h-4 text-[#A9C7A5] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -211,7 +211,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               {project.technicalArchitecture && (
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wider font-mono text-[var(--text-muted)] mb-2 flex items-center gap-2">
-                    <Workflow className="w-4 h-4 text-[#4776E6]" />
+                    <Workflow className="w-4 h-4 text-[#F28B82]" />
                     <span>Technical Architecture</span>
                   </h3>
                   <p className="text-sm text-[var(--text-secondary)] leading-relaxed glass-subtle p-4 rounded-2xl font-mono">
@@ -257,7 +257,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.hardwareDetails.microcontroller && (
                   <div className="glass-subtle p-4 rounded-2xl space-y-1">
                     <div className="text-xs font-mono text-[var(--text-muted)] uppercase flex items-center gap-1.5">
-                      <Cpu className="w-3.5 h-3.5 text-[#4776E6]" />
+                      <Cpu className="w-3.5 h-3.5 text-[#F6B77A]" />
                       <span>Microcontroller / Processor</span>
                     </div>
                     <div className="text-sm font-medium text-[var(--text-dark)]">
@@ -319,7 +319,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                         key={i}
                         className="text-xs text-[var(--text-secondary)] glass-subtle p-3 rounded-xl flex items-start gap-2"
                       >
-                        <span className="font-mono text-[#4776E6] font-bold">0{i + 1}.</span>
+                        <span className="font-mono text-[#F28B82] font-bold">0{i + 1}.</span>
                         <span>{chal}</span>
                       </div>
                     ))}
@@ -367,7 +367,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Footer with External Links */}
-        <div className="p-6 border-t border-black/5 dark:border-white/10 bg-white/40 dark:bg-black/20 flex flex-wrap items-center justify-between gap-4">
+        <div className="p-6 border-t border-[#FFD6BF]/40 bg-[#FFF4DF]/50 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             {project.githubUrl && (
               <GlassButton

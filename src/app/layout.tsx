@@ -4,8 +4,8 @@ import { portfolioData } from "@/data/portfolio";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F8FAFD" },
-    { media: "(prefers-color-scheme: dark)", color: "#0B0F19" },
+    { media: "(prefers-color-scheme: light)", color: "#FFFDF5" },
+    { media: "(prefers-color-scheme: dark)", color: "#2B2F2A" },
   ],
   width: "device-width",
   initialScale: 1,

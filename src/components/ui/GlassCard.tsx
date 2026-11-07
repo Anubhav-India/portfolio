@@ -14,7 +14,7 @@ interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const GlassCard: React.FC<GlassCardProps> = ({
   variant = "card",
-  glowColor = "rgba(71, 118, 230, 0.12)",
+  glowColor = "rgba(246, 183, 122, 0.22)",
   enableSpotlight = true,
   className,
   children,

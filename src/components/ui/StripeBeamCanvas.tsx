@@ -72,6 +72,8 @@ export const StripeBeamCanvas: React.FC = () => {
         pulseSpeed: 1.5 + Math.random() * 1.5,
       });
 
+      const warmPalette = ["#F28B82", "#F6B77A", "#F8E7A1", "#A9C7A5", "#E3F0A8", "#F3C1C1"];
+
       rays.push({
         baseAngle,
         currentAngle: baseAngle,
@@ -80,13 +82,8 @@ export const StripeBeamCanvas: React.FC = () => {
         baseLength,
         speed: 0.03 + Math.random() * 0.04,
         nodes,
-        color:
-          fraction < 0.35
-            ? "#648FEA"
-            : fraction < 0.7
-            ? "#FFFFFF"
-            : "#9075E8",
-        width: 0.8 + Math.random() * 0.8,
+        color: warmPalette[i % warmPalette.length],
+        width: 1.0 + Math.random() * 0.8,
       });
     }
 
@@ -157,11 +154,11 @@ export const StripeBeamCanvas: React.FC = () => {
           originY - h * 0.35,
           w * 0.75
         );
-        bgGlow.addColorStop(0, "rgba(255, 255, 255, 0.45)");
-        bgGlow.addColorStop(0.15, "rgba(85, 200, 217, 0.35)");
-        bgGlow.addColorStop(0.45, "rgba(71, 118, 230, 0.22)");
-        bgGlow.addColorStop(0.8, "rgba(144, 117, 232, 0.08)");
-        bgGlow.addColorStop(1, "rgba(0, 0, 0, 0)");
+        bgGlow.addColorStop(0, "rgba(255, 255, 255, 0.95)");
+        bgGlow.addColorStop(0.2, "rgba(248, 231, 161, 0.65)");
+        bgGlow.addColorStop(0.5, "rgba(255, 214, 191, 0.45)");
+        bgGlow.addColorStop(0.8, "rgba(200, 232, 208, 0.25)");
+        bgGlow.addColorStop(1, "rgba(255, 253, 245, 0)");
 
         ctx.fillStyle = bgGlow;
         ctx.fillRect(0, 0, w, h);
@@ -173,7 +170,7 @@ export const StripeBeamCanvas: React.FC = () => {
 
           ctx.beginPath();
           ctx.arc(originX, originY, state.shockwaveRadius, Math.PI, 0);
-          ctx.strokeStyle = `rgba(85, 200, 217, ${state.shockwaveAlpha * 0.6})`;
+          ctx.strokeStyle = `rgba(242, 139, 130, ${state.shockwaveAlpha * 0.75})`;
           ctx.lineWidth = 3;
           ctx.stroke();
 
@@ -260,7 +257,7 @@ export const StripeBeamCanvas: React.FC = () => {
             if (t === 1.0) {
               ctx.beginPath();
               ctx.arc(nx, ny, node.size * 2.4, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(85, 200, 217, ${alpha * 0.35})`;
+              ctx.fillStyle = `rgba(246, 183, 122, ${alpha * 0.45})`;
               ctx.fill();
             }
           }
@@ -269,9 +266,9 @@ export const StripeBeamCanvas: React.FC = () => {
         // Central radiant flare at base emitter
         const coreGrad = ctx.createRadialGradient(originX, originY, 0, originX, originY, 45);
         coreGrad.addColorStop(0, "rgba(255, 255, 255, 1)");
-        coreGrad.addColorStop(0.3, "rgba(85, 200, 217, 0.85)");
-        coreGrad.addColorStop(0.7, "rgba(71, 118, 230, 0.4)");
-        coreGrad.addColorStop(1, "rgba(71, 118, 230, 0)");
+        coreGrad.addColorStop(0.3, "rgba(248, 231, 161, 0.95)");
+        coreGrad.addColorStop(0.7, "rgba(246, 183, 122, 0.55)");
+        coreGrad.addColorStop(1, "rgba(242, 139, 130, 0)");
 
         ctx.beginPath();
         ctx.arc(originX, originY, 45, Math.PI, 0);
@@ -322,20 +319,20 @@ export const StripeBeamCanvas: React.FC = () => {
   return (
     <GlassCard
       variant="liquid"
-      className="p-5 sm:p-7 relative overflow-hidden group border-white/90 dark:border-white/20 select-none shadow-xl"
+      className="p-5 sm:p-7 relative overflow-hidden group border-[#A9C7A5]/35 select-none shadow-xl bg-white/95"
     >
       {/* Header bar of the widget */}
       <div className="flex items-center justify-between mb-3 z-20 relative">
         <div className="flex items-center gap-2">
-          <div className="p-1.5 rounded-lg bg-[#4776E6]/10 text-[#4776E6] flex items-center justify-center">
+          <div className="p-1.5 rounded-lg bg-[#F6B77A]/20 text-[#F28B82] flex items-center justify-center">
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <div className="text-[11px] font-mono uppercase tracking-wider font-bold text-[var(--text-dark)] flex items-center gap-1.5">
+            <div className="text-[11px] font-mono uppercase tracking-wider font-bold text-[#343A32] flex items-center gap-1.5">
               <span>Interactive Beam Dynamics</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#A9C7A5] animate-ping" />
             </div>
-            <div className="text-[10px] text-[var(--text-muted)] font-mono">
+            <div className="text-[10px] text-[#77776D] font-mono font-medium">
               Cursor-Reactive Optical Synthesis
             </div>
           </div>
@@ -343,8 +340,8 @@ export const StripeBeamCanvas: React.FC = () => {
 
         {/* Live Tracking Telemetry Pill */}
         <div className="flex items-center gap-2">
-          <div className="px-2.5 py-1 rounded-full glass-subtle text-[10px] font-mono text-[var(--text-secondary)] flex items-center gap-1.5">
-            <Compass className="w-3 h-3 text-[#55C8D9] animate-spin" style={{ animationDuration: "12s" }} />
+          <div className="px-2.5 py-1 rounded-full bg-[#FFFDF5] border border-[#F6B77A]/40 text-[10px] font-mono text-[#343A32] flex items-center gap-1.5 shadow-xs font-semibold">
+            <Compass className="w-3 h-3 text-[#F28B82] animate-spin" style={{ animationDuration: "12s" }} />
             <span>
               {mousePos.isHovered ? `X:${mousePos.x}% Y:${mousePos.y}%` : "TRACKING IDLE"}
             </span>
@@ -352,34 +349,34 @@ export const StripeBeamCanvas: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Interactive Radiant Canvas Container */}
+      {/* Main Interactive Radiant Canvas Container in Warm Cream & Peach */}
       <div
         ref={containerRef}
         data-cursor="PULSE"
         onPointerMove={handlePointerMove}
         onPointerLeave={handlePointerLeave}
         onClick={handleClick}
-        className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden cursor-crosshair bg-gradient-to-b from-[#2B3A8C] via-[#3B4CA8] to-[#1C2356] border border-white/30 dark:border-white/10 shadow-inner group"
+        className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden cursor-crosshair bg-gradient-to-b from-[#FFFDF5] via-[#FFF4DF] to-[#FFEBE0] border border-[#FFD6BF] shadow-inner group"
       >
         {/* HTML5 Canvas */}
         <canvas ref={canvasRef} className="absolute inset-0 block w-full h-full" />
 
         {/* Floating Hint Overlay */}
-        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/35 backdrop-blur-md text-[10px] font-mono text-white/90 flex items-center gap-1.5 pointer-events-none transition-opacity duration-300">
-          <Activity className="w-3 h-3 text-[#55C8D9]" />
+        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/85 backdrop-blur-md border border-[#A9C7A5]/40 text-[10px] font-mono text-[#343A32] font-semibold flex items-center gap-1.5 pointer-events-none transition-opacity duration-300 shadow-xs">
+          <Activity className="w-3 h-3 text-[#F28B82]" />
           <span>Move cursor to deflect • Click for pulse</span>
         </div>
 
         {/* Bottom subtle gradient badge */}
-        <div className="absolute bottom-2 right-3 text-[9px] font-mono tracking-widest text-white/50 uppercase pointer-events-none">
+        <div className="absolute bottom-2 right-3 text-[9px] font-mono tracking-widest text-[#77776D] uppercase pointer-events-none font-semibold">
           130 Optical Beams • 60 FPS
         </div>
       </div>
 
       {/* Footer Info Strip */}
-      <div className="mt-3 pt-2.5 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-[11px] text-[var(--text-muted)] font-mono">
+      <div className="mt-3 pt-2.5 border-t border-[#A9C7A5]/25 flex items-center justify-between text-[11px] text-[#77776D] font-mono font-medium">
         <span>STRIPE SESSIONS DYNAMICS ENGINE</span>
-        <span className="text-[#4776E6] font-semibold">HARMONIC SPRING DAMPING</span>
+        <span className="text-[#E27D60] font-bold">HARMONIC SPRING DAMPING</span>
       </div>
     </GlassCard>
   );
