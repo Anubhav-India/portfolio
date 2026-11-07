@@ -38,11 +38,11 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
 
   const variantClasses = {
     primary:
-      "bg-gradient-to-r from-[#4776E6] via-[#5584f5] to-[#9075E8] text-white shadow-[0_8px_24px_rgba(71,118,230,0.32)] hover:shadow-[0_12px_28px_rgba(71,118,230,0.45)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-white/25",
+      "bg-gradient-to-r from-[#315FEA] via-[#4F7BFF] to-[#8661D9] dark:from-[#5797FF] dark:via-[#6B85FF] dark:to-[#9B75EF] text-white shadow-[0_6px_20px_rgba(49,95,234,0.28)] dark:shadow-[0_6px_24px_rgba(87,151,255,0.35)] hover:shadow-[0_10px_28px_rgba(49,95,234,0.42)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-white/20",
     secondary:
-      "glass-subtle text-[var(--text-dark)] hover:text-[#4776E6] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] hover:border-[#4776E6]/40",
+      "bg-white/90 dark:bg-[#151E30]/80 backdrop-blur-md text-[var(--text-dark)] border border-[var(--glass-border)] hover:text-[var(--accent-primary)] hover:border-[var(--accent-primary)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] shadow-sm",
     glass:
-      "glass-card text-[var(--text-dark)] hover:text-[#4776E6] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
+      "glass-card text-[var(--text-dark)] hover:text-[var(--accent-primary)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
     ghost:
       "bg-transparent text-[var(--text-secondary)] hover:text-[var(--text-dark)] hover:bg-black/5 dark:hover:bg-white/5",
   };

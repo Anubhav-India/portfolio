@@ -91,7 +91,7 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[#4776E6]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-subtle text-xs font-mono font-medium text-[var(--accent-primary)]">
             <Sparkles className="w-3.5 h-3.5" />
             <span>LET&apos;S COLLABORATE</span>
           </div>
@@ -130,7 +130,8 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   onClick={copyEmail}
-                  className="p-2 rounded-xl glass-card text-[var(--text-secondary)] hover:text-[#4776E6] transition-colors cursor-pointer shrink-0"
+                  data-cursor="COPY"
+                  className="p-2 rounded-xl glass-card text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors cursor-pointer shrink-0"
                   aria-label="Copy email address"
                   title="Copy to clipboard"
                 >

@@ -214,20 +214,21 @@ export const ProjectsSection: React.FC = () => {
             <GlassCard
               key={project.id}
               variant="card"
+              data-cursor="VIEW"
               className="p-6 sm:p-7 flex flex-col justify-between hover:-translate-y-1.5 group cursor-pointer"
               onClick={() => setSelectedProject(project)}
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-[#4776E6]/10 text-[#4776E6]">
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-[var(--accent-primary)]/10 text-[var(--accent-primary)]">
                     {project.category}
                   </span>
-                  <div className="flex items-center gap-1 text-[var(--text-muted)] group-hover:text-[#4776E6] transition-colors">
+                  <div className="flex items-center gap-1 text-[var(--text-muted)] group-hover:text-[var(--accent-primary)] transition-colors">
                     <Maximize2 className="w-4 h-4" />
                   </div>
                 </div>
 
-                <h4 className="text-lg font-bold text-[var(--text-dark)] group-hover:text-[#4776E6] transition-colors">
+                <h4 className="text-lg font-bold text-[var(--text-dark)] group-hover:text-[var(--accent-primary)] transition-colors">
                   {project.title}
                 </h4>
 
@@ -253,7 +254,7 @@ export const ProjectsSection: React.FC = () => {
                   )}
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-[#4776E6] font-medium pt-1">
+                <div className="flex items-center justify-between text-xs text-[var(--accent-primary)] font-medium pt-1">
                   <span>Explore Architecture</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>

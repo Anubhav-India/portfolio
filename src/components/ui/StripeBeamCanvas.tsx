@@ -355,6 +355,7 @@ export const StripeBeamCanvas: React.FC = () => {
       {/* Main Interactive Radiant Canvas Container */}
       <div
         ref={containerRef}
+        data-cursor="PULSE"
         onPointerMove={handlePointerMove}
         onPointerLeave={handlePointerLeave}
         onClick={handleClick}

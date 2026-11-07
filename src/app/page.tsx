@@ -11,15 +11,19 @@ import { LeadershipSection } from "@/components/leadership/LeadershipSection";
 import { AchievementsSection } from "@/components/achievements/AchievementsSection";
 import { ContactSection } from "@/components/contact/ContactSection";
 import { Footer } from "@/components/footer/Footer";
-import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
+import { InteractiveBackground } from "@/components/ui/InteractiveBackground";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { BackToTop } from "@/components/ui/BackToTop";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen flex flex-col selection:bg-[#4776E6]/20 selection:text-[#4776E6]">
-      {/* Dynamic Background Atmosphere */}
-      <AnimatedBackground />
+    <main className="relative min-h-screen flex flex-col selection:bg-[var(--accent-primary)]/20 selection:text-[var(--accent-primary)]">
+      {/* Desktop Custom Circular Cursor with Magnetic Lerp */}
+      <CustomCursor />
+
+      {/* Reactive Particle Constellation & Cursor Spotlight Background */}
+      <InteractiveBackground />
 
       {/* Top Reading Progress Bar */}
       <ScrollProgress />

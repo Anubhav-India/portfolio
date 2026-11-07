@@ -20,19 +20,19 @@ import { PortfolioData } from "@/types/portfolio";
 
 export const portfolioData: PortfolioData = {
   metadata: {
-    siteTitle: "[YOUR FULL NAME] | [YOUR PROFESSIONAL HEADLINE]",
+    siteTitle: "Anubhav Anand | Electronics and Instrumentation Engineering Student",
     siteDescription:
-      "Personal engineering and software development portfolio of [YOUR FULL NAME]. Showcasing technical projects, research interests, systems engineering, and academic achievements.",
+      "Personal engineering and software development portfolio of Anubhav Anand. Showcasing technical projects, research interests, systems engineering, and academic achievements.",
     keywords: [
+      "Anubhav Anand",
+      "Electronics and Instrumentation",
       "Software Engineer",
       "Embedded Systems",
-      "Electronics",
-      "Next.js",
-      "TypeScript",
+      "Control Systems",
       "Engineering Portfolio",
     ],
-    author: "[YOUR FULL NAME]",
-    siteUrl: "https://yourportfolio.domain",
+    author: "Anubhav Anand",
+    siteUrl: "https://anubhavanand.dev",
   },
 
   personal: {

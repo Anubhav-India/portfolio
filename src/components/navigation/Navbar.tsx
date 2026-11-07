@@ -122,6 +122,7 @@ export const Navbar: React.FC = () => {
                 <a
                   key={item.id}
                   href={item.href}
+                  data-cursor={item.label.toUpperCase()}
                   onClick={(e) => {
                     e.preventDefault();
                     scrollTo(item.href);
@@ -129,13 +130,13 @@ export const Navbar: React.FC = () => {
                   className={cn(
                     "relative px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-200 cursor-pointer select-none",
                     isActive
-                      ? "text-[#4776E6] font-semibold"
+                      ? "text-[var(--accent-primary)] font-semibold"
                       : "text-[var(--text-secondary)] hover:text-[var(--text-dark)] hover:bg-black/5 dark:hover:bg-white/5"
                   )}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute inset-x-2 -bottom-1 h-0.5 bg-gradient-to-r from-[#4776E6] to-[#55C8D9] rounded-full" />
+                    <span className="absolute inset-x-2 -bottom-1 h-0.5 bg-gradient-to-r from-[var(--gradient-text-start)] to-[var(--gradient-text-mid)] rounded-full" />
                   )}
                 </a>
               );
@@ -147,16 +148,19 @@ export const Navbar: React.FC = () => {
             {/* Quick Command Palette Button */}
             <button
               onClick={() => setCommandMenuOpen(true)}
-              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full glass-subtle text-[11px] text-[var(--text-secondary)] hover:text-[#4776E6] transition-colors cursor-pointer"
+              data-cursor="SEARCH"
+              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full glass-subtle text-[11px] text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors cursor-pointer"
               aria-label="Open command search"
               title="Quick Search (Ctrl/Cmd + K)"
             >
-              <Command className="w-3 h-3 text-[#4776E6]" />
+              <Command className="w-3 h-3 text-[var(--accent-primary)]" />
               <span className="font-mono text-[10px]">K</span>
             </button>
 
             {/* Light / Dark Mode Toggle */}
-            <ThemeToggle />
+            <div data-cursor="THEME">
+              <ThemeToggle />
+            </div>
 
             {/* Resume Button */}
             {portfolioData.personal.resumeUrl && (

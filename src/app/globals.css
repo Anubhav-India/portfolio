@@ -1,72 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  /* Core Light Palette */
-  --bg-main: #F8FAFD;
-  --bg-secondary: #F1F5FA;
-  --bg-alternate: #EDF2F8;
+  /* =========================================================================
+     LIGHT THEME DESIGN TOKENS
+     Carefully calibrated for high contrast, crisp definition, and zero wash-out.
+     ========================================================================= */
+  --bg-main: #F5F7FC;
+  --bg-secondary: #EDF1F8;
+  --bg-alternate: #E5EAF3;
   --surface-primary: #FFFFFF;
-  --surface-secondary: #F7F9FC;
+  --surface-secondary: #F8FAFD;
   
   /* Text */
   --text-dark: #172033;
-  --text-secondary: #64748B;
-  --text-muted: #94A3B8;
+  --text-secondary: #526078;
+  --text-muted: #748197;
 
   /* Accents */
-  --accent-electric: #4776E6;
-  --accent-cyan: #55C8D9;
-  --accent-violet: #9075E8;
-  --accent-pale-blue: #E7F0FF;
-  --accent-lavender: #F0ECFF;
-  --accent-ice-blue: #EAF8FC;
-  --accent-soft-indigo: #DDE6FC;
+  --accent-primary: #315FEA;
+  --accent-electric: #315FEA;
+  --accent-secondary: #087F9C;
+  --accent-violet: #8661D9;
+  --accent-pale: #EBF1FD;
+  --accent-lavender: #F2EEFB;
+  --accent-cyan-soft: #E8F7FB;
 
-  /* Glass Tokens - Light */
-  --glass-bg-subtle: rgba(255, 255, 255, 0.52);
-  --glass-bg-card: rgba(255, 255, 255, 0.68);
-  --glass-bg-liquid: rgba(255, 255, 255, 0.78);
-  --glass-border: rgba(255, 255, 255, 0.85);
-  --glass-border-subtle: rgba(226, 232, 240, 0.7);
+  /* Glass Tokens - Light (Crisp opacity to prevent washed out text) */
+  --glass-bg-subtle: rgba(255, 255, 255, 0.82);
+  --glass-bg-card: rgba(255, 255, 255, 0.90);
+  --glass-bg-liquid: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(24, 38, 65, 0.12);
+  --glass-border-subtle: rgba(24, 38, 65, 0.08);
   --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.95);
   
-  /* Shadows */
-  --shadow-soft: 0 4px 20px -2px rgba(45, 65, 100, 0.05);
-  --shadow-medium: 0 12px 32px -4px rgba(45, 65, 100, 0.08);
-  --shadow-floating: 0 24px 48px -8px rgba(45, 65, 100, 0.12);
-  --shadow-glow: 0 0 25px rgba(71, 118, 230, 0.22);
+  /* Shadows - Light (Natural & crisp depth) */
+  --shadow-soft: 0 2px 10px -1px rgba(24, 38, 65, 0.05), 0 1px 3px rgba(24, 38, 65, 0.03);
+  --shadow-medium: 0 8px 24px -4px rgba(24, 38, 65, 0.07), 0 2px 6px -1px rgba(24, 38, 65, 0.03);
+  --shadow-floating: 0 20px 42px -8px rgba(24, 38, 65, 0.10), 0 4px 12px -2px rgba(24, 38, 65, 0.04);
+  --shadow-glow: 0 0 24px rgba(49, 95, 234, 0.20);
+
+  /* Cursor Tokens */
+  --cursor-ring: rgba(49, 95, 234, 0.65);
+  --cursor-dot: #315FEA;
+  --cursor-fill: rgba(49, 95, 234, 0.08);
+
+  /* Gradient Accent System */
+  --gradient-text-start: #386BEB;
+  --gradient-text-mid: #087F9C;
+  --gradient-text-end: #8661D9;
 }
 
 .dark {
-  --bg-main: #0B0F19;
-  --bg-secondary: #0F172A;
-  --bg-alternate: #131D31;
-  --surface-primary: #151F32;
-  --surface-secondary: #1B273E;
+  /* =========================================================================
+     DARK THEME DESIGN TOKENS
+     Deep, sophisticated, with controlled luminous blue and violet accents.
+     ========================================================================= */
+  --bg-main: #080B14;
+  --bg-secondary: #101625;
+  --bg-alternate: #151D30;
+  --surface-primary: #151E30;
+  --surface-secondary: #1B263D;
   
-  --text-dark: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  /* Text */
+  --text-dark: #F4F7FF;
+  --text-secondary: #A5B1C5;
+  --text-muted: #78869D;
 
-  --accent-electric: #5E8BFF;
-  --accent-cyan: #46D2E6;
-  --accent-violet: #A288FC;
-  --accent-pale-blue: #162447;
-  --accent-lavender: #1E1B4B;
-  --accent-ice-blue: #0E2A38;
-  --accent-soft-indigo: #1A2744;
+  /* Accents */
+  --accent-primary: #5797FF;
+  --accent-electric: #5797FF;
+  --accent-secondary: #53D6E8;
+  --accent-violet: #9B75EF;
+  --accent-pale: #142242;
+  --accent-lavender: #211B45;
+  --accent-cyan-soft: #0E2938;
 
-  --glass-bg-subtle: rgba(18, 25, 41, 0.55);
-  --glass-bg-card: rgba(21, 31, 50, 0.68);
-  --glass-bg-liquid: rgba(26, 38, 62, 0.78);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-subtle: rgba(255, 255, 255, 0.08);
-  --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  /* Glass Tokens - Dark */
+  --glass-bg-subtle: rgba(18, 26, 43, 0.62);
+  --glass-bg-card: rgba(21, 30, 48, 0.74);
+  --glass-bg-liquid: rgba(26, 38, 62, 0.84);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-border-subtle: rgba(255, 255, 255, 0.07);
+  --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.16);
 
-  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
-  --shadow-medium: 0 12px 32px -4px rgba(0, 0, 0, 0.55);
-  --shadow-floating: 0 24px 50px -8px rgba(0, 0, 0, 0.7);
-  --shadow-glow: 0 0 30px rgba(94, 139, 255, 0.25);
+  /* Shadows - Dark */
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --shadow-medium: 0 12px 32px -4px rgba(0, 0, 0, 0.62);
+  --shadow-floating: 0 24px 50px -8px rgba(0, 0, 0, 0.78);
+  --shadow-glow: 0 0 30px rgba(87, 151, 255, 0.28);
+
+  /* Cursor Tokens */
+  --cursor-ring: rgba(87, 151, 255, 0.75);
+  --cursor-dot: #5797FF;
+  --cursor-fill: rgba(87, 151, 255, 0.15);
+
+  /* Gradient Accent System */
+  --gradient-text-start: #528BFF;
+  --gradient-text-mid: #53D6E8;
+  --gradient-text-end: #9B75EF;
 }
 
 /* Base Body Setup */
@@ -79,7 +110,7 @@ body {
   color: var(--text-dark);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Geist", "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* Custom Scrollbar */
@@ -90,12 +121,12 @@ body {
   background: var(--bg-main);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.25);
+  background: rgba(100, 116, 139, 0.28);
   border-radius: 9999px;
   border: 2px solid var(--bg-main);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(71, 118, 230, 0.45);
+  background: var(--accent-primary);
 }
 
 /* =========================================================================
@@ -105,15 +136,15 @@ body {
 /* Level 1: Subtle Glass (Pills, badges, small nav items) */
 .glass-subtle {
   background: var(--glass-bg-subtle);
-  backdrop-filter: blur(14px) saturate(145%);
-  -webkit-backdrop-filter: blur(14px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
   border: 1px solid var(--glass-border-subtle);
-  box-shadow: 0 2px 10px rgba(40, 60, 100, 0.03), var(--glass-inner-bevel);
+  box-shadow: var(--shadow-soft), var(--glass-inner-bevel);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-subtle:hover {
-  border-color: rgba(71, 118, 230, 0.35);
-  box-shadow: 0 4px 16px rgba(40, 60, 100, 0.06), var(--glass-inner-bevel);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-medium), var(--glass-inner-bevel);
 }
 
 /* Level 2: Premium Glass (Standard cards, timeline blocks, modals) */
@@ -122,20 +153,14 @@ body {
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
   border: 1px solid var(--glass-border);
-  box-shadow:
-    0 10px 30px -5px rgba(40, 60, 100, 0.05),
-    0 2px 8px -2px rgba(40, 60, 100, 0.03),
-    var(--glass-inner-bevel);
+  box-shadow: var(--shadow-medium), var(--glass-inner-bevel);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.35s ease;
 }
 .glass-card:hover {
-  box-shadow:
-    0 20px 40px -10px rgba(45, 65, 100, 0.09),
-    0 4px 12px -2px rgba(45, 65, 100, 0.04),
-    var(--glass-inner-bevel);
-  border-color: rgba(71, 118, 230, 0.4);
+  box-shadow: var(--shadow-floating), var(--glass-inner-bevel);
+  border-color: var(--accent-primary);
 }
 
 /* Level 3: Liquid Glass (Featured cards, Hero visuals, primary widgets) */
@@ -145,10 +170,7 @@ body {
   backdrop-filter: blur(28px) saturate(175%);
   -webkit-backdrop-filter: blur(28px) saturate(175%);
   border: 1px solid var(--glass-border);
-  box-shadow:
-    0 20px 48px -10px rgba(45, 65, 100, 0.09),
-    0 4px 14px -3px rgba(45, 65, 100, 0.04),
-    var(--glass-inner-bevel);
+  box-shadow: var(--shadow-floating), var(--glass-inner-bevel);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -165,9 +187,9 @@ body {
     115deg,
     transparent 0%,
     transparent 35%,
-    rgba(255, 255, 255, 0.35) 45%,
-    rgba(85, 200, 217, 0.15) 50%,
-    rgba(255, 255, 255, 0.4) 55%,
+    rgba(255, 255, 255, 0.4) 45%,
+    rgba(83, 214, 232, 0.15) 50%,
+    rgba(255, 255, 255, 0.45) 55%,
     transparent 65%,
     transparent 100%
   );
@@ -182,53 +204,35 @@ body {
 
 /* Floating Glass Navbar Capsule */
 .glass-navbar {
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--glass-bg-card);
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow:
-    0 12px 36px -4px rgba(40, 60, 100, 0.06),
-    0 2px 6px rgba(40, 60, 100, 0.02),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-medium), var(--glass-inner-bevel);
   transition: all 0.3s ease;
 }
 
-.dark .glass-navbar {
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow:
-    0 12px 36px -4px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-
-/* Gradient Text */
+/* Gradient Text System */
 .gradient-text {
-  background: linear-gradient(110deg, #4776E6 0%, #55C8D9 50%, #9075E8 100%);
+  background: linear-gradient(110deg, var(--gradient-text-start) 0%, var(--gradient-text-mid) 50%, var(--gradient-text-end) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   display: inline-block;
 }
 
-.dark .gradient-text {
-  background: linear-gradient(110deg, #60A5FA 0%, #38BDF8 50%, #C084FC 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 /* Subtle Technical Grid Pattern */
 .bg-grid-pattern {
-  background-size: 32px 32px;
+  background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(24, 38, 65, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 38, 65, 0.06) 1px, transparent 1px);
 }
 
 .dark .bg-grid-pattern {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
 /* Animated Ambient Glows */
@@ -237,7 +241,7 @@ body {
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(25px, -20px) scale(1.06);
+    transform: translate(20px, -18px) scale(1.05);
   }
 }
 
@@ -246,19 +250,18 @@ body {
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(-30px, 20px) scale(0.95);
+    transform: translate(-25px, 15px) scale(0.96);
   }
 }
 
 .animate-float-slow {
-  animation: floatSlow 18s ease-in-out infinite;
+  animation: floatSlow 20s ease-in-out infinite;
 }
 
 .animate-float-reverse {
-  animation: floatReverse 22s ease-in-out infinite;
+  animation: floatReverse 24s ease-in-out infinite;
 }
 
-/* Pulse Glow */
 @keyframes pulseGlow {
   0%, 100% {
     opacity: 0.55;
@@ -266,11 +269,27 @@ body {
   }
   50% {
     opacity: 0.85;
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 }
 .animate-pulse-glow {
   animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Hide default cursor on desktop when CustomCursor is active */
+@media (hover: hover) and (pointer: fine) {
+  body.custom-cursor-active,
+  body.custom-cursor-active * {
+    cursor: none !important;
+  }
+
+  /* Restore standard text cursor on text inputs */
+  body.custom-cursor-active input[type="text"],
+  body.custom-cursor-active input[type="email"],
+  body.custom-cursor-active input[type="password"],
+  body.custom-cursor-active textarea {
+    cursor: text !important;
+  }
 }
 
 /* Accessibility: Respect Reduced Motion */
