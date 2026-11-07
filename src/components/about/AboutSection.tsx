@@ -11,7 +11,7 @@ export const AboutSection: React.FC = () => {
   const { personal } = portfolioData;
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-[#FFFDF5] via-[#F2FAF4] to-[#FFFDF5]">
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-transparent">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-3">

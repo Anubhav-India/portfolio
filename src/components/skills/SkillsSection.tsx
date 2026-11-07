@@ -64,7 +64,7 @@ export const SkillsSection: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-[#FFFDF5] via-[#FFF4DF]/60 to-[#FFFDF5]">
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-transparent">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
@@ -104,10 +104,10 @@ export const SkillsSection: React.FC = () => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all duration-200 cursor-pointer select-none",
+                  "flex items-center gap-2 px-4 py-2 rounded-full text-xs transition-all duration-200 cursor-pointer select-none",
                   isActive
-                    ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold border border-[#343A32]"
-                    : "bg-[#FFFDF5] text-[var(--text-secondary)] hover:text-[var(--text-dark)] border border-[#FFD6BF]/40"
+                    ? "bg-gradient-to-r from-[#F6B77A] to-[#F28B82] text-white shadow-md font-bold border border-transparent"
+                    : "bg-[#FFFDF5]/90 text-[#343A32] hover:bg-[#FFF4DF] hover:border-[#F6B77A] border border-[#FFD6BF] shadow-xs font-medium"
                 )}
               >
                 <Icon className="w-3.5 h-3.5" />

@@ -90,7 +90,7 @@ export const ProjectsSection: React.FC = () => {
   }, [filteredProjects, featuredProject]);
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[#FFFDF5]">
+    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-transparent">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
@@ -116,8 +116,8 @@ export const ProjectsSection: React.FC = () => {
                 className={cn(
                   "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 cursor-pointer whitespace-nowrap",
                   activeCategory === cat
-                    ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold border border-[#343A32]"
-                    : "bg-[#FFFDF5] text-[var(--text-secondary)] hover:text-[var(--text-dark)] border border-[#FFD6BF]/40"
+                    ? "bg-gradient-to-r from-[#F6B77A] to-[#F28B82] text-white shadow-md font-bold border border-transparent"
+                    : "bg-[#FFFDF5]/90 text-[#343A32] hover:bg-[#FFF4DF] hover:border-[#F6B77A] border border-[#FFD6BF] shadow-xs font-medium"
                 )}
               >
                 {cat}
@@ -241,7 +241,7 @@ export const ProjectsSection: React.FC = () => {
 
                   <button
                     onClick={() => setSelectedProject(featuredProject)}
-                    className="w-full py-2.5 rounded-xl bg-[#F6B77A]/20 text-[#343A32] hover:bg-[#F6B77A]/30 text-xs font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full py-2.5 rounded-xl bg-[#FFF4DF] text-[#343A32] border border-[#FFD6BF] hover:bg-[#F6B77A]/25 hover:border-[#F6B77A] text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                   >
                     <span>Inspect Schematics & Logs</span>
                     <ArrowRight className="w-3.5 h-3.5" />

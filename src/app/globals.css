@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* =========================================================================
      APPROVED WARM, VIBRANT & REFRESHING PALETTE
@@ -75,44 +77,44 @@
 }
 
 .dark {
-  /* Warm evening ambiance (preserving light & warm aesthetic principles) */
-  --bg-main: #242922;
-  --bg-secondary: #2C332A;
-  --bg-alternate: #343C32;
-  --surface-primary: #2F362D;
-  --surface-secondary: #262C24;
+  /* Warm Sunset & Candlelight ambiance (strictly preserving light, warm & vibrant palette) */
+  --bg-main: #FFF4DF;         /* Warm Cream */
+  --bg-secondary: #FFEBE0;    /* Soft Peach Wash */
+  --bg-alternate: #FEF6E4;
+  --surface-primary: #FFFDF5;
+  --surface-secondary: #FFF4DF;
   
-  --text-dark: #FFFDF5;
-  --text-secondary: #D4DBD0;
-  --text-muted: #A3ACA0;
+  --text-dark: #343A32;
+  --text-secondary: #77776D;
+  --text-muted: #9BA094;
 
-  --accent-primary: #F6B77A;
-  --accent-electric: #F6B77A;
-  --accent-secondary: #C8E8D0;
-  --accent-orange: #FFD6BF;
-  --accent-mint: #E3F0A8;
+  --accent-primary: #F28B82;
+  --accent-electric: #F28B82;
+  --accent-secondary: #A9C7A5;
+  --accent-orange: #F6B77A;
+  --accent-mint: #C8E8D0;
   --accent-yellow: #F8E7A1;
   --accent-peach: #FFD6BF;
 
-  --glass-bg-subtle: rgba(44, 51, 42, 0.75);
-  --glass-bg-card: rgba(47, 54, 45, 0.85);
-  --glass-bg-liquid: rgba(52, 60, 50, 0.92);
-  --glass-border: rgba(169, 199, 165, 0.22);
-  --glass-border-subtle: rgba(246, 183, 122, 0.18);
-  --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --glass-bg-subtle: rgba(255, 253, 245, 0.92);
+  --glass-bg-card: rgba(255, 255, 255, 0.95);
+  --glass-bg-liquid: rgba(255, 253, 245, 0.98);
+  --glass-border: rgba(246, 183, 122, 0.35);
+  --glass-border-subtle: rgba(255, 214, 191, 0.35);
+  --glass-inner-bevel: inset 0 1px 0 rgba(255, 255, 255, 0.95);
 
-  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
-  --shadow-medium: 0 12px 32px -4px rgba(0, 0, 0, 0.45);
-  --shadow-floating: 0 24px 50px -8px rgba(0, 0, 0, 0.55);
-  --shadow-glow: 0 0 30px rgba(246, 183, 122, 0.22);
+  --shadow-soft: 0 4px 16px -2px rgba(119, 119, 109, 0.08);
+  --shadow-medium: 0 8px 28px -4px rgba(119, 119, 109, 0.1);
+  --shadow-floating: 0 20px 42px -8px rgba(119, 119, 109, 0.14);
+  --shadow-glow: 0 0 24px rgba(246, 183, 122, 0.32);
 
-  --cursor-ring: rgba(246, 183, 122, 0.85);
-  --cursor-dot: #F6B77A;
-  --cursor-fill: rgba(246, 183, 122, 0.22);
+  --cursor-ring: rgba(242, 139, 130, 0.85);
+  --cursor-dot: #F28B82;
+  --cursor-fill: rgba(255, 214, 191, 0.3);
 
-  --gradient-text-start: #F6B77A;
-  --gradient-text-mid: #FFD6BF;
-  --gradient-text-end: #C8E8D0;
+  --gradient-text-start: #E67E50;
+  --gradient-text-mid: #F28B82;
+  --gradient-text-end: #6B9A64;
 }
 
 /* Base Body Setup */

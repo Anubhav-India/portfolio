@@ -42,7 +42,7 @@ export const InteractiveBackground: React.FC = () => {
       y: -1000,
       targetX: -1000,
       targetY: -1000,
-      radius: isTouchDevice ? 0 : 160,
+      radius: isTouchDevice ? 0 : 200,
       isActive: false,
     };
 
@@ -51,21 +51,21 @@ export const InteractiveBackground: React.FC = () => {
       const isDark = document.documentElement.classList.contains("dark");
       if (isDark) {
         return {
-          spotlightCore: "rgba(246, 183, 122, 0.15)",
-          spotlightMid: "rgba(200, 232, 208, 0.08)",
-          spotlightOuter: "rgba(248, 231, 161, 0.03)",
+          spotlightCore: "rgba(246, 183, 122, 0.25)",
+          spotlightMid: "rgba(200, 232, 208, 0.14)",
+          spotlightOuter: "rgba(248, 231, 161, 0.06)",
           particleColors: ["#F6B77A", "#C8E8D0", "#F8E7A1", "#FFD6BF", "#A9C7A5"],
           lineColor: "rgba(169, 199, 165,",
-          gridColor: "rgba(200, 232, 208, 0.05)",
+          gridColor: "rgba(200, 232, 208, 0.08)",
         };
       }
       return {
-        spotlightCore: "rgba(248, 231, 161, 0.22)",
-        spotlightMid: "rgba(255, 214, 191, 0.14)",
-        spotlightOuter: "rgba(200, 232, 208, 0.05)",
+        spotlightCore: "rgba(255, 214, 191, 0.32)",
+        spotlightMid: "rgba(248, 231, 161, 0.20)",
+        spotlightOuter: "rgba(200, 232, 208, 0.08)",
         particleColors: ["#A9C7A5", "#F6B77A", "#F28B82", "#C8E8D0", "#F8E7A1", "#FFD6BF"],
         lineColor: "rgba(169, 199, 165,",
-        gridColor: "rgba(169, 199, 165, 0.08)",
+        gridColor: "rgba(169, 199, 165, 0.12)",
       };
     };
 
@@ -82,8 +82,8 @@ export const InteractiveBackground: React.FC = () => {
 
     // Particle array
     let particles: Particle[] = [];
-    const particleCount = isTouchDevice ? 28 : prefersReducedMotion ? 20 : 64;
-    const connectionMaxDist = 110;
+    const particleCount = isTouchDevice ? 36 : prefersReducedMotion ? 25 : 85;
+    const connectionMaxDist = 130;
 
     const initParticles = () => {
       particles = [];
@@ -97,8 +97,8 @@ export const InteractiveBackground: React.FC = () => {
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * 0.45,
           vy: (Math.random() - 0.5) * 0.45,
-          radius: Math.random() * 1.6 + 1.0,
-          baseAlpha: Math.random() * 0.45 + 0.25,
+          radius: Math.random() * 1.8 + 1.2,
+          baseAlpha: Math.random() * 0.45 + 0.35,
           color,
         });
       }
@@ -211,12 +211,12 @@ export const InteractiveBackground: React.FC = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < connectionMaxDist) {
-            const lineAlpha = (1 - dist / connectionMaxDist) * 0.18;
+            const lineAlpha = (1 - dist / connectionMaxDist) * 0.35;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.strokeStyle = `${themeColors.lineColor} ${lineAlpha})`;
-            ctx.lineWidth = 0.8;
+            ctx.lineWidth = 1.0;
             ctx.stroke();
           }
         }
@@ -246,7 +246,7 @@ export const InteractiveBackground: React.FC = () => {
       aria-hidden="true"
     >
       {/* Base Tinted Ambient Background */}
-      <div className="absolute inset-0 bg-[#FFFDF5] dark:bg-[#242922] transition-colors duration-500" />
+      <div className="absolute inset-0 bg-[#FFFDF5] transition-colors duration-500" />
 
       {/* Subtle Engineering Grid in Warm Sage */}
       <div className="absolute inset-0 bg-grid-pattern opacity-60 dark:opacity-30" />
@@ -256,7 +256,7 @@ export const InteractiveBackground: React.FC = () => {
         className="absolute -top-[15%] -left-[10%] w-[65vw] h-[65vw] max-w-[850px] max-h-[850px] rounded-full animate-float-slow"
         style={{
           background:
-            "radial-gradient(circle, rgba(200, 232, 208, 0.35) 0%, rgba(227, 240, 168, 0.20) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(200, 232, 208, 0.4) 0%, rgba(227, 240, 168, 0.22) 45%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -266,19 +266,30 @@ export const InteractiveBackground: React.FC = () => {
         className="absolute top-[10%] -right-[15%] w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] rounded-full animate-float-reverse"
         style={{
           background:
-            "radial-gradient(circle, rgba(255, 214, 191, 0.35) 0%, rgba(248, 231, 161, 0.22) 45%, transparent 70%)",
+            "radial-gradient(circle, rgba(255, 214, 191, 0.4) 0%, rgba(248, 231, 161, 0.25) 45%, transparent 70%)",
           filter: "blur(85px)",
         }}
       />
 
       {/* Ambient Radial Gradient 3: Center Mid-Page Soft Cream Wash */}
       <div
-        className="absolute top-[50%] left-[15%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] rounded-full animate-float-slow"
+        className="absolute top-[45%] left-[15%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] rounded-full animate-float-slow"
         style={{
           background:
-            "radial-gradient(circle, rgba(255, 244, 223, 0.45) 0%, rgba(246, 183, 122, 0.15) 50%, transparent 70%)",
+            "radial-gradient(circle, rgba(255, 244, 223, 0.5) 0%, rgba(246, 183, 122, 0.2) 50%, transparent 70%)",
           filter: "blur(90px)",
           animationDelay: "-6s",
+        }}
+      />
+
+      {/* Ambient Radial Gradient 4: Bottom Contact / Peach & Coral Wash */}
+      <div
+        className="absolute bottom-[-10%] right-[10%] w-[55vw] h-[55vw] max-w-[750px] max-h-[750px] rounded-full animate-float-reverse"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255, 214, 191, 0.42) 0%, rgba(242, 139, 130, 0.22) 50%, transparent 75%)",
+          filter: "blur(95px)",
+          animationDelay: "-10s",
         }}
       />
 

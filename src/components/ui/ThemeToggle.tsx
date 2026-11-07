@@ -15,12 +15,13 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
   useEffect(() => {
     setMounted(true);
     const storedTheme = localStorage.getItem("portfolio-theme");
-    if (storedTheme === "dark") {
+    if (storedTheme === "sunset") {
       setIsDark(true);
       document.documentElement.classList.add("dark");
     } else {
       setIsDark(false);
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("portfolio-theme", "light");
     }
   }, []);
 
@@ -29,7 +30,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
     setIsDark(nextDark);
     if (nextDark) {
       document.documentElement.classList.add("dark");
-      localStorage.setItem("portfolio-theme", "dark");
+      localStorage.setItem("portfolio-theme", "sunset");
     } else {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("portfolio-theme", "light");
@@ -53,7 +54,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className }) => {
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       className={cn(
-        "relative p-2 rounded-full glass-subtle text-[var(--text-dark)] hover:text-[#F28B82] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F28B82]",
+        "relative p-2 rounded-full bg-[#FFFDF5] text-[#343A32] border border-[#FFD6BF] hover:border-[#F28B82] hover:bg-[#FFF4DF] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F28B82]",
         className
       )}
     >

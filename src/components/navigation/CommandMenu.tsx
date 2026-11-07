@@ -141,9 +141,9 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
       />
 
       {/* Dialog Body */}
-      <div className="relative w-full max-w-lg glass-card rounded-2xl overflow-hidden shadow-2xl border border-white/80 dark:border-white/15 animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-lg bg-[#FFFDF5] rounded-2xl overflow-hidden shadow-2xl border border-[#FFD6BF] animate-in fade-in zoom-in-95 duration-200">
         {/* Search Input Bar */}
-        <div className="flex items-center px-4 py-3.5 border-b border-black/5 dark:border-white/10 gap-3">
+        <div className="flex items-center px-4 py-3.5 border-b border-[#FFD6BF]/40 gap-3">
           <Search className="w-5 h-5 text-slate-400 shrink-0" />
           <input
             type="text"
@@ -155,7 +155,7 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
           />
           <button
             onClick={onClose}
-            className="p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+            className="p-1 rounded-lg text-slate-400 hover:text-slate-600"
             aria-label="Close command menu"
           >
             <X className="w-4 h-4" />
@@ -175,10 +175,10 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
                 <button
                   key={item.id}
                   onClick={item.action}
-                  className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-sm text-[var(--text-dark)] hover:bg-[#F28B82]/15 hover:text-[#F28B82] transition-colors duration-150 group cursor-pointer"
+                  className="w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-left text-sm text-[var(--text-dark)] hover:bg-[#FFF4DF] hover:text-[#F28B82] transition-colors duration-150 group cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-1.5 rounded-lg bg-black/5 dark:bg-white/5 text-[var(--text-secondary)] group-hover:text-[#F28B82]">
+                    <div className="p-1.5 rounded-lg bg-[#FFF4DF] text-[#343A32] group-hover:text-[#F28B82]">
                       <Icon className="w-4 h-4" />
                     </div>
                     <span className="font-medium">{item.name}</span>
@@ -193,10 +193,10 @@ export const CommandMenu: React.FC<CommandMenuProps> = ({
         </div>
 
         {/* Footer Hint */}
-        <div className="px-4 py-2.5 bg-black/[0.02] dark:bg-white/[0.02] border-t border-black/5 dark:border-white/10 flex items-center justify-between text-[11px] text-[var(--text-muted)]">
+        <div className="px-4 py-2.5 bg-[#FFF4DF]/50 border-t border-[#FFD6BF]/40 flex items-center justify-between text-[11px] text-[var(--text-muted)]">
           <span>Use keyboard navigation</span>
           <div className="flex items-center gap-1.5">
-            <kbd className="px-1.5 py-0.5 rounded bg-black/5 dark:bg-white/10 font-mono text-[10px]">
+            <kbd className="px-1.5 py-0.5 rounded bg-[#FFFDF5] border border-[#FFD6BF] font-mono text-[10px] text-[#343A32]">
               ESC
             </kbd>
             <span>to close</span>

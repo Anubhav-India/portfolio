@@ -87,7 +87,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-b from-[#FFFDF5] via-[#FFF4DF]/50 to-[#FFEBE0]/70 rounded-3xl mx-2 sm:mx-6 my-12 border border-[#FFD6BF]/40">
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-transparent">
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-3">
@@ -131,7 +131,7 @@ export const ContactSection: React.FC = () => {
                 <button
                   onClick={copyEmail}
                   data-cursor="COPY"
-                  className="p-2 rounded-xl glass-card text-[var(--text-secondary)] hover:text-[#F28B82] transition-colors cursor-pointer shrink-0"
+                  className="p-2 rounded-xl bg-[#FFFDF5] border border-[#FFD6BF] text-[var(--text-secondary)] hover:text-[#F28B82] hover:border-[#F28B82] transition-colors cursor-pointer shrink-0 shadow-xs"
                   aria-label="Copy email address"
                   title="Copy to clipboard"
                 >

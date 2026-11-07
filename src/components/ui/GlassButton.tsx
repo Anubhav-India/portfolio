@@ -38,13 +38,13 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
 
   const variantClasses = {
     primary:
-      "bg-gradient-to-r from-[#F6B77A] via-[#F28B82] to-[#E27D60] text-[#343A32] font-bold shadow-[0_6px_20px_rgba(246,183,122,0.35)] hover:shadow-[0_10px_28px_rgba(242,139,130,0.45)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-white/70",
+      "bg-gradient-to-r from-[#F6B77A] via-[#F28B82] to-[#E27D60] text-white font-bold shadow-[0_6px_20px_rgba(246,183,122,0.35)] hover:shadow-[0_10px_28px_rgba(242,139,130,0.45)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] border border-white/60",
     secondary:
-      "bg-[#FFFDF5] dark:bg-[#2C332A] backdrop-blur-md text-[var(--text-dark)] border border-[#A9C7A5]/40 hover:border-[#F6B77A] hover:bg-[#FFF4DF] dark:hover:bg-[#343C32] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] shadow-sm font-semibold",
+      "bg-[#FFFDF5] text-[#343A32] border-2 border-[#FFD6BF] hover:border-[#F28B82] hover:bg-[#FFF4DF] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] shadow-sm font-semibold",
     glass:
-      "glass-card text-[var(--text-dark)] hover:text-[#F28B82] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] font-semibold",
+      "bg-[#FFFDF5]/90 text-[#343A32] border border-[#FFD6BF] hover:border-[#F28B82] hover:text-[#F28B82] hover:bg-[#FFF4DF] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] font-semibold shadow-xs",
     ghost:
-      "bg-transparent text-[var(--text-secondary)] hover:text-[var(--text-dark)] hover:bg-[#FFF4DF]/60 dark:hover:bg-white/5 font-semibold",
+      "bg-transparent text-[#77776D] hover:text-[#343A32] hover:bg-[#FFF4DF]/70 font-semibold border border-transparent hover:border-[#FFD6BF]/40",
   };
 
   const renderIcon = () => {

@@ -149,11 +149,11 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setCommandMenuOpen(true)}
               data-cursor="SEARCH"
-              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full glass-subtle text-[11px] text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors cursor-pointer"
+              className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FFFDF5] border border-[#FFD6BF] text-[11px] text-[#343A32] hover:text-[#F28B82] hover:border-[#F28B82] hover:bg-[#FFF4DF] transition-colors cursor-pointer shadow-xs"
               aria-label="Open command search"
               title="Quick Search (Ctrl/Cmd + K)"
             >
-              <Command className="w-3 h-3 text-[var(--accent-primary)]" />
+              <Command className="w-3 h-3 text-[#F28B82]" />
               <span className="font-mono text-[10px]">K</span>
             </button>
 
@@ -179,7 +179,7 @@ export const Navbar: React.FC = () => {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-full glass-subtle text-[var(--text-dark)] hover:text-[#F28B82] transition-colors cursor-pointer"
+              className="lg:hidden p-2 rounded-full bg-[#FFFDF5] border border-[#FFD6BF] text-[#343A32] hover:text-[#F28B82] hover:border-[#F28B82] transition-colors cursor-pointer shadow-xs"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >
@@ -210,8 +210,8 @@ export const Navbar: React.FC = () => {
                   className={cn(
                     "px-4 py-3 rounded-2xl text-base font-medium transition-colors flex items-center justify-between",
                     isActive
-                      ? "glass-card text-[#F28B82] font-semibold"
-                      : "text-[var(--text-secondary)] hover:text-[var(--text-dark)] hover:bg-black/5 dark:hover:bg-white/5"
+                      ? "bg-[#FFF4DF] text-[#F28B82] font-semibold border border-[#FFD6BF]"
+                      : "text-[var(--text-secondary)] hover:text-[var(--text-dark)] hover:bg-[#FFF4DF]/60"
                   )}
                 >
                   <span>{item.label}</span>
@@ -220,7 +220,7 @@ export const Navbar: React.FC = () => {
               );
             })}
 
-            <div className="pt-4 border-t border-black/5 dark:border-white/10 flex flex-col gap-3">
+            <div className="pt-4 border-t border-[#FFD6BF]/40 flex flex-col gap-3">
               {portfolioData.personal.resumeUrl && (
                 <GlassButton
                   variant="primary"
@@ -238,7 +238,7 @@ export const Navbar: React.FC = () => {
                   setMobileMenuOpen(false);
                   setCommandMenuOpen(true);
                 }}
-                className="w-full py-2.5 px-4 rounded-full glass-subtle text-sm text-[var(--text-secondary)] flex items-center justify-center gap-2"
+                className="w-full py-2.5 px-4 rounded-full bg-[#FFFDF5] border border-[#FFD6BF] text-sm text-[#343A32] hover:bg-[#FFF4DF] flex items-center justify-center gap-2"
               >
                 <Command className="w-4 h-4 text-[#F28B82]" />
                 <span>Command Menu (Ctrl+K)</span>

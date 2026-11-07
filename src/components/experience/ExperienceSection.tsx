@@ -19,7 +19,7 @@ export const ExperienceSection: React.FC = () => {
   if (!experience || experience.length === 0) return null;
 
   return (
-    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[#FFFDF5]">
+    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-transparent">
       <div className="max-w-5xl mx-auto space-y-14">
         {/* Section Header */}
         <div className="flex flex-col items-start space-y-3">

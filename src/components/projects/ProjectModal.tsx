@@ -98,10 +98,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <button
             onClick={() => setActiveTab("overview")}
             className={cn(
-              "px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer",
+              "px-3.5 py-1.5 rounded-full text-xs transition-all cursor-pointer font-medium",
               activeTab === "overview"
-                ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold"
-                : "text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
+                ? "bg-gradient-to-r from-[#F6B77A] to-[#F28B82] text-white shadow-sm font-bold"
+                : "bg-[#FFFDF5] text-[#77776D] hover:text-[#343A32] hover:bg-[#FFF4DF] border border-[#FFD6BF]/40"
             )}
           >
             Overview & Problem
@@ -111,10 +111,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <button
               onClick={() => setActiveTab("architecture")}
               className={cn(
-                "px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer",
+                "px-3.5 py-1.5 rounded-full text-xs transition-all cursor-pointer font-medium",
                 activeTab === "architecture"
-                  ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold"
-                  : "text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
+                  ? "bg-gradient-to-r from-[#F6B77A] to-[#F28B82] text-white shadow-sm font-bold"
+                  : "bg-[#FFFDF5] text-[#77776D] hover:text-[#343A32] hover:bg-[#FFF4DF] border border-[#FFD6BF]/40"
               )}
             >
               System Architecture
@@ -125,10 +125,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <button
               onClick={() => setActiveTab("hardware")}
               className={cn(
-                "px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer",
+                "px-3.5 py-1.5 rounded-full text-xs transition-all cursor-pointer font-medium",
                 activeTab === "hardware"
-                  ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold"
-                  : "text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
+                  ? "bg-gradient-to-r from-[#F6B77A] to-[#F28B82] text-white shadow-sm font-bold"
+                  : "bg-[#FFFDF5] text-[#77776D] hover:text-[#343A32] hover:bg-[#FFF4DF] border border-[#FFD6BF]/40"
               )}
             >
               Hardware & Circuit
@@ -138,10 +138,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <button
             onClick={() => setActiveTab("outcomes")}
             className={cn(
-              "px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors cursor-pointer",
+              "px-3.5 py-1.5 rounded-full text-xs transition-all cursor-pointer font-medium",
               activeTab === "outcomes"
-                ? "bg-[#343A32] text-[#FFFDF5] shadow-sm font-semibold"
-                : "text-[var(--text-secondary)] hover:text-[var(--text-dark)]"
+                ? "bg-gradient-to-r from-[#F6B77A] to-[#F28B82] text-white shadow-sm font-bold"
+                : "bg-[#FFFDF5] text-[#77776D] hover:text-[#343A32] hover:bg-[#FFF4DF] border border-[#FFD6BF]/40"
             )}
           >
             Challenges & Results
