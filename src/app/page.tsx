@@ -1,4 +1,5 @@
 import React from "react";
+import { CinematicIntro } from "@/components/intro/CinematicIntro";
 import { Navbar } from "@/components/navigation/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { AboutSection } from "@/components/about/AboutSection";
@@ -19,6 +20,9 @@ import { BackToTop } from "@/components/ui/BackToTop";
 export default function Home() {
   return (
     <main className="relative min-h-screen flex flex-col selection:bg-[var(--accent-primary)]/20 selection:text-[var(--accent-primary)]">
+      {/* Full-Screen Cinematic Website Launch Intro */}
+      <CinematicIntro />
+
       {/* Desktop Custom Circular Cursor with Magnetic Lerp */}
       <CustomCursor />
 
